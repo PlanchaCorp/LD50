@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tickDelay: {fileID: 11400000, guid: 59df29884a87b6281900ab2eb7e0d150, type: 2}
-  onTickEvent: {fileID: 11400000, guid: 63716a67539e9321fa3b3e07a2f5ac3d, type: 2}
+  onTickEvent: {fileID: 11400000, guid: 8e1a7eed176801002a15a22f7887d912, type: 2}

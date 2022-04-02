@@ -6,7 +6,7 @@ using PlanchaCorp.LD50.ScriptableObjects;
 public class AllyLifeManager : MonoBehaviour
 {
     [SerializeField]
-    private GameEvent onAllyDie;
+    private GameEventPublisher onAllyDie;
     [SerializeField]
     private FloatVariable maxHealth;
     public float currentHealth;
@@ -23,14 +23,15 @@ public class AllyLifeManager : MonoBehaviour
         }
     }
     public void Hurt(GameEvent gameEvent) {
-        float damage = gameEvent.floatValue;
+        float damage = (float)gameEvent.Get();
         this.currentHealth = this.currentHealth - damage;
     }
     public void Heal(float healingAmount) {
         this.currentHealth = this.currentHealth + healingAmount;
     }
     public void Die(){
-        onAllyDie.Raise();
+        GameEvent deathEvent = new GameEvent(this);
+        onAllyDie.Raise(deathEvent);
         Destroy(gameObject);
     }
 }

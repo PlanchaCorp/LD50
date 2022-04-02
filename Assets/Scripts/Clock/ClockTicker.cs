@@ -10,7 +10,7 @@ namespace PlanchaCorp.LD50.Scripts {
         [SerializeField]
         private FloatVariable tickDelay;
         [SerializeField]
-        private GameEvent onTickEvent;
+        private GameEventPublisher onTickEvent;
         void OnEnable()
         {
             StartCoroutine("tick");
@@ -19,9 +19,9 @@ namespace PlanchaCorp.LD50.Scripts {
             StopCoroutine("tick");
         }
         IEnumerator tick(){
-            for(;;){
-                onTickEvent.floatValue = tickDelay.Value;
-                onTickEvent.Raise();
+            for(;;) {
+                GameEvent tickEvent = new GameEvent(tickDelay.Value);
+                onTickEvent.Raise(tickEvent);
                 yield return new WaitForSeconds(tickDelay.Value);
             }
         }

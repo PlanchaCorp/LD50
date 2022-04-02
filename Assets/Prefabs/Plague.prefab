@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 908d64777e1c8557eb314c473a636a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plagueEvent: {fileID: 11400000, guid: a7e1e458225db8f869b34b00d8275777, type: 2}
+  plagueEventPublisher: {fileID: 11400000, guid: 8dbfc3e6e330ad874b7cff4dac19ebe6, type: 2}
   dpsAtStart: {fileID: 11400000, guid: 318790af9ef8cf466ac9a514fccdd280, type: 2}
   dpsIncrease: {fileID: 11400000, guid: 6a9a3622b11c30d4b9197407242b6f56, type: 2}
 --- !u!114 &8181637439727510919
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec31ebeb221abc73ad449102fee72d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 63716a67539e9321fa3b3e07a2f5ac3d, type: 2}
+  EventPublisher: {fileID: 11400000, guid: 8e1a7eed176801002a15a22f7887d912, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:

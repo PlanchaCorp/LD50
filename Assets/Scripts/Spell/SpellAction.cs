@@ -40,7 +40,7 @@ namespace PlanchaCorp.LD50.Scripts.Spell {
         }
         public void OnTriggerExit2D(Collider2D collider){
             if("Ally".Equals(collider.tag)){
-            this.alliesInRange.Remove(collider.gameObject);
+                this.alliesInRange.Remove(collider.gameObject);
             }
         }
         public void HealAllies(){

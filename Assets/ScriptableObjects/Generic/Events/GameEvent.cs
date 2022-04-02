@@ -1,44 +1,30 @@
-// ----------------------------------------------------------------------------
-// Unite 2017 - Game Architecture with Scriptable Objects
-// 
-// Author: Ryan Hipple
-// Date:   10/04/17
-// ----------------------------------------------------------------------------
-
-using System.Collections.Generic;
-using UnityEngine;
-using PlanchaCorp.LD50.ScriptableObjects;
+using System;
 
 namespace PlanchaCorp.LD50.ScriptableObjects
 {
-    [CreateAssetMenu(menuName = "Scriptable Objects/Game Event")]
-    public class GameEvent : ScriptableObject
+    public class GameEvent
     {
-        /// <summary>
-        /// The list of listeners that this event will notify if it is raised.
-        /// </summary>
-        private readonly List<GameEventListener> eventListeners =
-            new List<GameEventListener>();
+        private Object Value;
 
-        public float floatValue;
-        public int intValue;
-
-        public void Raise()
+        public GameEvent(Object value) {
+            this.Value = value;
+        }
+        public void Set<T>(T obj) where T : class
         {
-            for (int i = eventListeners.Count - 1; i >= 0; i--)
-                eventListeners[i].OnEventRaised();
+            this.Value = obj;
+        }
+        public T Get<T>() where T : class
+        {
+            return (T)Value;
         }
 
-        public void RegisterListener(GameEventListener listener)
+        public void Set(System.Object obj)
         {
-            if (!eventListeners.Contains(listener))
-                eventListeners.Add(listener);
+            this.Value = obj;
         }
-
-        public void UnregisterListener(GameEventListener listener)
+        public System.Object Get()
         {
-            if (eventListeners.Contains(listener))
-                eventListeners.Remove(listener);
+            return Value;
         }
     }
 }

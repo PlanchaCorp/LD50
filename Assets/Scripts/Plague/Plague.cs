@@ -8,7 +8,7 @@ namespace PlanchaCorp.LD50.Scripts
     public class Plague : MonoBehaviour
     {
         [SerializeField]
-        private GameEvent plagueEvent;
+        private GameEventPublisher plagueEventPublisher;
 
         [SerializeField]
         private FloatVariable dpsAtStart;
@@ -28,8 +28,8 @@ namespace PlanchaCorp.LD50.Scripts
         }
 
         public void Decay(GameEvent clockTickEvent) {
-            plagueEvent.floatValue = dps * clockTickEvent.floatValue;
-            plagueEvent.Raise();
+            GameEvent plagueEvent = new GameEvent(dps * (float)clockTickEvent.Get());
+            plagueEventPublisher.Raise(plagueEvent);
         }
     }
 }

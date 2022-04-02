@@ -1,0 +1,19 @@
+.container {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.skillbar {
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-bottom: 8px;
+}
+
+.skill {
+    width: 64px;
+    height: 64px;
+    margin: 0 4px;
+    background-color: orange;
+}

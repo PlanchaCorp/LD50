@@ -1,9 +1,3 @@
-// ----------------------------------------------------------------------------
-// Unite 2017 - Game Architecture with Scriptable Objects
-// 
-// Author: Ryan Hipple
-// Date:   10/04/17
-// ----------------------------------------------------------------------------
 
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,25 +7,31 @@ namespace PlanchaCorp.LD50.ScriptableObjects
 {
     public class GameEventListener : MonoBehaviour
     {
-        [Tooltip("Event to register with.")]
-        public GameEvent Event;
+        [Tooltip("Event Publisher to register with.")]
+        public GameEventPublisher EventPublisher;
 
         [Tooltip("Response to invoke when Event is raised.")]
         public UnityEvent<GameEvent> Response;
 
         private void OnEnable()
         {
-            Event.RegisterListener(this);
+            if (EventPublisher != null)
+            {
+                EventPublisher.RegisterListener(this);
+            }
         }
 
         private void OnDisable()
         {
-            Event.UnregisterListener(this);
+            if (EventPublisher != null)
+            {
+                EventPublisher.UnregisterListener(this);
+            }
         }
 
-        public void OnEventRaised()
+        public void OnEventRaised(GameEvent value)
         {
-            Response.Invoke(Event);
+            Response.Invoke(value);
         }
     }
 }

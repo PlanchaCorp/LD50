@@ -11,8 +11,8 @@ using PlanchaCorp.LD50.ScriptableObjects;
 
 namespace RoboRyanTron.Unite2017.Events
 {
-    [CustomEditor(typeof(GameEvent), editorForChildClasses: true)]
-    public class GameEventEditor : Editor
+    [CustomEditor(typeof(GameEventPublisher), editorForChildClasses: true)]
+    public class GameEventPublisherEditor : Editor
     {
         public override void OnInspectorGUI()
         {
@@ -20,9 +20,9 @@ namespace RoboRyanTron.Unite2017.Events
 
             GUI.enabled = Application.isPlaying;
 
-            GameEvent e = target as GameEvent;
+            GameEventPublisher e = target as GameEventPublisher;
             if (GUILayout.Button("Raise"))
-                e.Raise();
+                e.Raise(new GameEvent(0));
         }
     }
 }
