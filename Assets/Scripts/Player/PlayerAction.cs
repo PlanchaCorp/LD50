@@ -28,7 +28,7 @@ namespace PlanchaCorp.LD50.Scripts.Player {
         private void CastPassiveSpell(){
             GameObject passiveSpell = spellBook.spells[0];
             GameObject spellCasted = Instantiate(passiveSpell,this.transform);
-            spellCasted.GetComponent<SpellAction>().cast(0,15,1);
+            spellCasted.GetComponent<SpellAction>().cast(0,1,1);
         }
     }
 }
