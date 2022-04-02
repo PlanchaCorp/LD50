@@ -10,5 +10,16 @@ namespace PlanchaCorp.LD50.ScriptableObjects
     {
         [SerializeField]
         public float Value;
+
+        [SerializeField]
+        public float DefaultValue;
+
+        public void OnEnable(){
+            if (DefaultValue != 0) {
+                Value = DefaultValue;   
+            }
+        }
+
+
     }
 }
