@@ -213,6 +213,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1688170616671725896, guid: 17002e7fc5e970a9098f64bb03906ab9, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Keyboard&Mouse
+      objectReference: {fileID: 0}
     - target: {fileID: 4450369992917332793, guid: 17002e7fc5e970a9098f64bb03906ab9, type: 3}
       propertyPath: m_Name
       value: Player

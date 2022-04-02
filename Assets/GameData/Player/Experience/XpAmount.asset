@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: XpAmount
   m_EditorClassIdentifier: 
   Value: 0
+  ResetValueOnStart: 1
   DefaultValue: 0

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: XpGainEvent
   m_EditorClassIdentifier: 
   floatValue: 0
-  intValue: 0
+  intValue: 70

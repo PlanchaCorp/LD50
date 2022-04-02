@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e24930d35dbe235bd30b9c98c3ba9e, type: 3}
   m_Name: MaxXpPerLevel
   m_EditorClassIdentifier: 
-  Value: 0
+  Value: 100
+  ResetValueOnStart: 1
   DefaultValue: 100
