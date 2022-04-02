@@ -6,6 +6,6 @@ namespace PlanchaCorp.LD50.ScriptableObjects{
     public class SpellBook : ScriptableObject
     {
         [SerializeField]
-        List<GameObject> spells;
+        public List<GameObject> spells;
     }
 }

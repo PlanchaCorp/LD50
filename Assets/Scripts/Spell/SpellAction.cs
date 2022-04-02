@@ -8,25 +8,29 @@ namespace PlanchaCorp.LD50.Scripts.Spell {
     {
         private float endTime;
         private float amount;
+        private float duration;
         private List<GameObject> entities;
         // Start is called before the first frame update
         void Awake()
         {
             entities = new List<GameObject>();
-            cast(3,15,1);
         }
         // Update is called once per frame
         void Update()
         {
-            if(Time.time > endTime ){
+            if(duration != 0 && Time.time > endTime ){
                 Destroy(gameObject);
             }
         }
 
-        void cast(float duration,float amount,float scale){
-            endTime = Time.time + duration;
+        public void cast(float duration,float amount,float scale){
+
             this.transform.localScale *= scale;
             this.amount = amount;
+            this.duration = duration;
+            if (duration > 0) {
+                endTime = Time.time + duration;
+            }
         }
 
         public void OnTriggerEnter2D(Collider2D collider){
