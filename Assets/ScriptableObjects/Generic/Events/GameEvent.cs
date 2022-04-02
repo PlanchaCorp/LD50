@@ -7,10 +7,11 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using PlanchaCorp.LD50.ScriptableObjects;
 
 namespace PlanchaCorp.LD50.ScriptableObjects
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Scriptable Objects/Game Event")]
     public class GameEvent : ScriptableObject
     {
         /// <summary>
@@ -18,6 +19,9 @@ namespace PlanchaCorp.LD50.ScriptableObjects
         /// </summary>
         private readonly List<GameEventListener> eventListeners =
             new List<GameEventListener>();
+
+        public float floatValue;
+        public int intValue;
 
         public void Raise()
         {

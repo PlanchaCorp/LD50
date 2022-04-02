@@ -10,5 +10,19 @@ namespace PlanchaCorp.LD50.ScriptableObjects
     {
         [SerializeField]
         public Vector2 Value;
+
+        [SerializeField]
+        public bool ResetValueOnStart;
+
+        [SerializeField]
+        public Vector2 DefaultValue;
+
+        public void OnEnable()
+        {
+            if (ResetValueOnStart)
+            {
+                Value = DefaultValue;
+            }
+        }
     }
 }

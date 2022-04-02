@@ -5,21 +5,21 @@ using UnityEngine;
 
 namespace PlanchaCorp.LD50.ScriptableObjects
 {
-    [CreateAssetMenu(menuName = "Scriptable Objects/Float Variable")]
-    public class FloatVariable : ScriptableObject
+    [CreateAssetMenu(menuName = "Scriptable Objects/Int Variable")]
+    public class IntVariable : ScriptableObject
     {
         [SerializeField]
-        public float Value;
+        public int Value;
 
         [SerializeField]
-        public float DefaultValue;
+        public bool ResetValueOnStart;
+        [SerializeField]
+        public int DefaultValue;
 
         public void OnEnable(){
-            if (DefaultValue != 0) {
+            if (ResetValueOnStart) {
                 Value = DefaultValue;   
             }
         }
-
-
     }
 }

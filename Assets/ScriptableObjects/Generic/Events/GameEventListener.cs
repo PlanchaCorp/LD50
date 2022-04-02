@@ -7,6 +7,7 @@
 
 using UnityEngine;
 using UnityEngine.Events;
+using PlanchaCorp.LD50.ScriptableObjects;
 
 namespace PlanchaCorp.LD50.ScriptableObjects
 {
@@ -16,7 +17,7 @@ namespace PlanchaCorp.LD50.ScriptableObjects
         public GameEvent Event;
 
         [Tooltip("Response to invoke when Event is raised.")]
-        public UnityEvent Response;
+        public UnityEvent<GameEvent> Response;
 
         private void OnEnable()
         {
@@ -30,7 +31,7 @@ namespace PlanchaCorp.LD50.ScriptableObjects
 
         public void OnEventRaised()
         {
-            Response.Invoke();
+            Response.Invoke(Event);
         }
     }
 }
