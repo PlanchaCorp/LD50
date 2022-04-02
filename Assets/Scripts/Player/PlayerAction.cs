@@ -11,6 +11,8 @@ namespace PlanchaCorp.LD50.Scripts.Player {
         private FloatVariable speed;
         [SerializeField]
         private SpellBook spellBook;
+        [SerializeField]
+        private Vector2Variable position;
         private Rigidbody2D rb;
         private Vector2 direction = Vector2.zero;
 
@@ -23,6 +25,7 @@ namespace PlanchaCorp.LD50.Scripts.Player {
         }
         public void FixedUpdate(){
             this.rb.velocity = direction * speed.Value;
+            this.position.Value = this.gameObject.transform.position;
         }
 
         private void CastPassiveSpell(){
