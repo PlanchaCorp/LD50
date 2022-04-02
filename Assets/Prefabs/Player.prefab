@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {fileID: 11400000, guid: 82c52a45e3ad07b0891016e2e582e521, type: 2}
   spellBook: {fileID: 11400000, guid: e623824f031be7cabb13ee107e42bd9e, type: 2}
+  position: {fileID: 11400000, guid: 2661059668d73e46e843f3ac2634a0f4, type: 2}
 --- !u!114 &6444778620716332214
 MonoBehaviour:
   m_ObjectHideFlags: 0
