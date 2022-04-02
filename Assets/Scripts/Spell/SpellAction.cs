@@ -47,7 +47,6 @@ namespace PlanchaCorp.LD50.Scripts.Spell {
             this.alliesInRange.ForEach(delegate(GameObject gameObject){
                 gameObject.GetComponent<AllyLifeManager>().Heal(amount);
             });
-            Debug.Log("heal" + this.alliesInRange.Count + amount);
         }
     }
 }
