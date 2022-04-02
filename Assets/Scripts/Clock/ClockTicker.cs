@@ -20,6 +20,7 @@ namespace PlanchaCorp.LD50.Scripts {
         }
         IEnumerator tick(){
             for(;;){
+                onTickEvent.floatValue = tickDelay.Value;
                 onTickEvent.Raise();
                 yield return new WaitForSeconds(tickDelay.Value);
             }
