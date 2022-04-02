@@ -206,6 +206,107 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1781884885
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3276853224198823407, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276853224198823407, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.9589186
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276853224198823407, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.024054084
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276853224198823407, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276853224198823407, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276853224198823407, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276853224198823407, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276853224198823407, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276853224198823407, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276853224198823407, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276853224198823407, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941984446237351741, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+      propertyPath: m_Name
+      value: Spell
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+--- !u!1 &1781884886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7941984446237351741, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+  m_PrefabInstance: {fileID: 1781884885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1781884887 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1541670193676658313, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+  m_PrefabInstance: {fileID: 1781884885}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781884886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04809e0f7cc24b817ab95c3962dfdf7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1781884888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781884886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec31ebeb221abc73ad449102fee72d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 63716a67539e9321fa3b3e07a2f5ac3d, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1781884887}
+        m_TargetAssemblyTypeName: PlanchaCorp.LD50.Scripts.Spell.SpellAction, Assembly-CSharp
+        m_MethodName: HealAllies
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &4450369993133474905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -223,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4450369992917332794, guid: 17002e7fc5e970a9098f64bb03906ab9, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4450369992917332794, guid: 17002e7fc5e970a9098f64bb03906ab9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -280,7 +381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7171157517917608478, guid: 889771e69bb10073a8135e4d0461c544, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7171157517917608478, guid: 889771e69bb10073a8135e4d0461c544, type: 3}
       propertyPath: m_LocalPosition.x

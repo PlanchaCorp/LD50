@@ -10,15 +10,11 @@ namespace PlanchaCorp.LD50.Scripts.Spell {
         private float amount;
         private List<GameObject> entities;
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             entities = new List<GameObject>();
-            StartCoroutine("tick");
+            cast(3,15,1);
         }
-        void OnDisable(){
-            StopAllCoroutines();
-        }
-
         // Update is called once per frame
         void Update()
         {
@@ -38,11 +34,8 @@ namespace PlanchaCorp.LD50.Scripts.Spell {
         public void OnTriggerExit2D(Collider2D collider){
 
         }
-        IEnumerator tick(){
-            while(true){
-            Debug.Log("heal for" + amount);
-            yield return new WaitForSeconds(amount);
-            }
+        public void HealAllies(){
+            Debug.Log("heal" + amount);
         }
     }
 }
