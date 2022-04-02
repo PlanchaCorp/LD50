@@ -9,7 +9,9 @@ public class SpawnManager : MonoBehaviour
         public GameObject ally;
         [SerializeField]
         private Vector2Variable playerPosition;
-        public int tick = 0;
+        [SerializeField]
+        private SpawnSetting spawnSetting;
+        private int tick = 0;
         void Start()
         {
 
@@ -17,22 +19,10 @@ public class SpawnManager : MonoBehaviour
 
         public void OnTick(){
             tick++;
-            if(tick%3 ==0){
-                Vector2 pos = Random.insideUnitCircle.normalized * Random.Range(20f,30f);
+            if(tick%spawnSetting.spawnRate == 0){
+                Vector2 pos = Random.insideUnitCircle.normalized * Random.Range(spawnSetting.minRange,spawnSetting.maxRange);
                 Instantiate(ally,playerPosition.Value + pos,Quaternion.identity);
             }
-        }
-        
-    public static Vector2 NextGaussian() {
-        float v1, v2, s;
-        do {
-            v1 = Random.Range(-1f,1f);
-            v2 = Random.Range(-1f,1f);
-            s = v1 * v1 + v2 * v2;
-        } while (s >= 1.0f || s == 0f);
-
-        s = Mathf.Sqrt((-2.0f * Mathf.Log(s)) / s);
-        return  new Vector2(v1 * s,v2 * s);
         }
     }
 }

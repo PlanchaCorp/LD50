@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ally: {fileID: 2393891099658401958, guid: 73ed6dbe35e6432cb967d32b4c94804c, type: 3}
   playerPosition: {fileID: 11400000, guid: 2661059668d73e46e843f3ac2634a0f4, type: 2}
-  tick: 0
+  spawnSetting: {fileID: 11400000, guid: c92df9b67c89169619c3c331cff95fee, type: 2}
 --- !u!114 &2075911649574335174
 MonoBehaviour:
   m_ObjectHideFlags: 0
