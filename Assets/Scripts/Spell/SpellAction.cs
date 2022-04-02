@@ -9,11 +9,11 @@ namespace PlanchaCorp.LD50.Scripts.Spell {
         private float endTime;
         private float amount;
         private float duration;
-        private List<GameObject> entities;
+        private List<GameObject> alliesInRange;
         // Start is called before the first frame update
         void Awake()
         {
-            entities = new List<GameObject>();
+            alliesInRange = new List<GameObject>();
         }
         // Update is called once per frame
         void Update()
@@ -34,12 +34,20 @@ namespace PlanchaCorp.LD50.Scripts.Spell {
         }
 
         public void OnTriggerEnter2D(Collider2D collider){
+            if("Ally".Equals(collider.tag)){
+                this.alliesInRange.Add(collider.gameObject);
+            }
         }
         public void OnTriggerExit2D(Collider2D collider){
-
+            if("Ally".Equals(collider.tag)){
+            this.alliesInRange.Remove(collider.gameObject);
+            }
         }
         public void HealAllies(){
-            Debug.Log("heal" + amount);
+            this.alliesInRange.ForEach(delegate(GameObject gameObject){
+                gameObject.GetComponent<AllyLifeManager>().Heal(amount);
+            });
+            Debug.Log("heal" + this.alliesInRange.Count + amount);
         }
     }
 }
