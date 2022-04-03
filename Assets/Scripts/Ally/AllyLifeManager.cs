@@ -12,14 +12,17 @@ namespace PlanchaCorp.LD50.Scripts
         [SerializeField]
         private FloatVariable maxHealth;
         public float currentHealth;
+        private HealthBar healthBar;
 
         void Start()
         {
             this.currentHealth = this.maxHealth.Value;
+            this.healthBar = GetComponentInChildren<HealthBar>();
         }
 
         void Update()
         {
+            this.healthBar.UpdateSlider(currentHealth,maxHealth.Value);
             if(this.currentHealth<=0){
                 Die();
             }

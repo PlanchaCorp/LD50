@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec31ebeb221abc73ad449102fee72d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 63716a67539e9321fa3b3e07a2f5ac3d, type: 2}
+  EventPublisher: {fileID: 11400000, guid: 8e1a7eed176801002a15a22f7887d912, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
