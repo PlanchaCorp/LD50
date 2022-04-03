@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PlanchaCorp.LD50.ScriptableObjects
 {
-    public abstract class AbstractSpellType : ScriptableObject
+    public class AbstractSpellType : ScriptableObject
     {
         [SerializeField]
         public int Level;

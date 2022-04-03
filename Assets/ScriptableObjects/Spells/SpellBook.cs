@@ -10,7 +10,7 @@ namespace PlanchaCorp.LD50.ScriptableObjects {
         [SerializeField]
         public List<GameObject> spells;
         [SerializeField]
-        private IntVariable availableSkillPoints;
+        public IntVariable availableSkillPoints;
 
         public AuraSpellType EquippedAuraSpell;
         public SpikeSpellType EquippedSpikeSpell;
@@ -59,18 +59,30 @@ namespace PlanchaCorp.LD50.ScriptableObjects {
 
         public bool AuraNextLevelExist()
         {
+            if(EquippedAuraSpell is null){
+                return true;
+            }
             return EquippedAuraSpell.Level < AuraSpellTypeArray.spellVersions.Length;
         }
         public bool SpikeNextLevelExist()
         {
+            if(EquippedSpikeSpell is null){
+                return true;
+            }
             return EquippedSpikeSpell.Level < SpikeSpellTypeArray.spellVersions.Length;
         }
         public bool SplashNextLevelExist()
         {
+            if(EquippedSplashSpell is null){
+                return true;
+            }
             return EquippedSplashSpell.Level < SplashSpellTypeArray.spellVersions.Length;
         }
         public bool RayNextLevelExist()
         {
+            if(EquippedRaySpell is null){
+                return true;
+            }
             return EquippedRaySpell.Level < RaySpellTypeArray.spellVersions.Length;
         }
 
@@ -97,9 +109,14 @@ namespace PlanchaCorp.LD50.ScriptableObjects {
         }
         public void UpgradeSplash()
         {
+            Debug.Log("upgrade splash");
             if (SplashNextLevelExist() && availableSkillPoints.Value > 0)
             {
-                EquippedSplashSpell = (SplashSpellType)SplashSpellTypeArray.spellVersions[EquippedSplashSpell.Level];
+                if(EquippedSplashSpell != null){
+                    EquippedSplashSpell = (SplashSpellType)SplashSpellTypeArray.spellVersions[EquippedSplashSpell.Level];
+                } else {
+                    EquippedSplashSpell= (SplashSpellType)SplashSpellTypeArray.spellVersions[0];
+            }
                 availableSkillPoints.Value -= 1;
             }
             else

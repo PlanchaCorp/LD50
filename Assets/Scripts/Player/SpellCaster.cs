@@ -11,6 +11,8 @@ namespace PlanchaCorp.LD50.Scripts.Player
     {
         [SerializeField]
         private SpellBook spellBook;
+        [SerializeField]
+        private GameEventPublisher castSpellEvent;
 
         private AbstractSpellType EquippedSpell;
 
@@ -76,6 +78,8 @@ namespace PlanchaCorp.LD50.Scripts.Player
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
                 spellCasted.GetComponent<SpikeSpell>().Cast((SpikeSpellType)EquippedSpell, mousePosition);
                 spikeCooldown = EquippedSpell.Cooldown;
+                castSpellEvent.Raise(new GameEvent(EquippedSpell));
+
             } else if (EquippedSpell.GetType() == typeof(RaySpellType))
             {
                 if (rayCooldown > 0)
@@ -87,6 +91,7 @@ namespace PlanchaCorp.LD50.Scripts.Player
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
                 spellCasted.GetComponent<RaySpell>().Cast((RaySpellType)EquippedSpell, mousePosition);
                 rayCooldown = EquippedSpell.Cooldown;
+                castSpellEvent.Raise(new GameEvent(EquippedSpell));
             }
             else if (EquippedSpell.GetType() == typeof(SplashSpellType))
             {
@@ -99,6 +104,7 @@ namespace PlanchaCorp.LD50.Scripts.Player
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
                 spellCasted.GetComponent<SplashSpellThrow>().Cast((SplashSpellType)EquippedSpell, mousePosition);
                 splashCooldown = EquippedSpell.Cooldown;
+                castSpellEvent.Raise(new GameEvent(EquippedSpell));
             }
         }
 
