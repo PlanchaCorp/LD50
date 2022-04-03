@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using PlanchaCorp.LD50.ScriptableObjects;
-using PlanchaCorp.LD50.Scripts.Spell;
 
 namespace PlanchaCorp.LD50.Scripts.Player {
 [RequireComponent(typeof(Rigidbody2D))]
@@ -10,9 +9,17 @@ namespace PlanchaCorp.LD50.Scripts.Player {
         [SerializeField]
         private FloatVariable speed;
         [SerializeField]
+        private Vector2Variable position;
+        [SerializeField]
         private SpellBook spellBook;
         [SerializeField]
-        private Vector2Variable position;
+        private GameEventPublisher auraSpellEvent;
+        [SerializeField]
+        private GameEventPublisher spikeSpellEvent;
+        [SerializeField]
+        private GameEventPublisher splashSpellEvent;
+        [SerializeField]
+        private GameEventPublisher raySpellEvent;
         private Rigidbody2D rb;
         private Vector2 direction = Vector2.zero;
 
@@ -28,10 +35,34 @@ namespace PlanchaCorp.LD50.Scripts.Player {
             this.position.Value = this.gameObject.transform.position;
         }
 
+        public void OnSkill1() {
+            // Do nothing, because this is the passive action run from the start
+        }
+
+        public void OnSkill2()
+        {
+            // GameEvent spellEvent = new GameEvent(this);
+            // spikeSpellEvent.Raise(spellEvent);
+            Debug.Log("Skill 2");
+        }
+
+        public void OnSkill3()
+        {
+            // GameEvent spellEvent = new GameEvent(this);
+            // splashSpellEvent.Raise(spellEvent);
+            Debug.Log("Skill 3");
+        }
+
+        public void OnSkill4()
+        {
+            // GameEvent spellEvent = new GameEvent(this);
+            // raySpellEvent.Raise(spellEvent);
+            Debug.Log("Skill 4");
+        }
+
         private void CastPassiveSpell(){
-            GameObject passiveSpell = spellBook.spells[0];
-            GameObject spellCasted = Instantiate(passiveSpell,this.transform);
-            spellCasted.GetComponent<SpellAction>().cast(0,1,1);
+            GameEvent spellEvent = new GameEvent(this);
+            auraSpellEvent.Raise(spellEvent);
         }
     }
 }

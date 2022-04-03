@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6f2f14fe8f339af7bb8df294a99649e, type: 3}
+  m_Name: PlayerSpellBook
+  m_EditorClassIdentifier: 
+  spells:
+  - {fileID: 7941984446237351741, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+  DefaultAuraSpellLevel: 1
+  DefaultSpikeSpellLevel: 0
+  DefaultSplashSpellLevel: 0
+  DefaultRaySpellLevel: 0
+  AuraSpellType: {fileID: 11400000, guid: de786beaaf5b4a859b104198f14f3c69, type: 2}
+  SpikeSpellType: {fileID: 11400000, guid: aad54d03edd9c5503ab73820ed378702, type: 2}
+  SplashSpellType: {fileID: 11400000, guid: e3b1efc51b8ca509db84eac76465be4b, type: 2}
+  RaySpellType: {fileID: 11400000, guid: 11016450043ee055f93ae517f771c614, type: 2}

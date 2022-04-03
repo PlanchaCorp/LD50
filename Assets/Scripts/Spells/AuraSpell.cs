@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-namespace PlanchaCorp.LD50.Scripts.Spell {
-    public class SpellAction : MonoBehaviour
+namespace PlanchaCorp.LD50.Scripts.Spells {
+    public class AuraSpell : MonoBehaviour
     {
         private float endTime;
         private float amount;
