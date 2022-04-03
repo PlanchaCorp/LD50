@@ -14,6 +14,8 @@ namespace PlanchaCorp.LD50.Scripts.Player
         [SerializeField]
         private IntVariable maxXpPerLevel;
         [SerializeField]
+        public IntVariable AvailableSkillPoints;
+        [SerializeField]
         private GameEventPublisher expRender;
         [SerializeField]
         private GameEventPublisher levelUpEvent;
@@ -31,6 +33,7 @@ namespace PlanchaCorp.LD50.Scripts.Player
         public void OnLevelUp(){
             this.levelAmount.Value ++;
             this.experienceAmount.Value = 0;
+            this.AvailableSkillPoints.Value++;
             this.maxXpPerLevel.Value = Mathf.CeilToInt(maxXpPerLevel.DefaultValue * Mathf.Pow( 1.5f , (float) levelAmount.Value));
         }
     }

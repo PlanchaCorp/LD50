@@ -31,17 +31,32 @@ namespace PlanchaCorp.LD50.Scripts.Player {
         {
             // Do nothing, because this is the passive action run from the start
         }
+        public void OnSkill1Upgrade() {
+            spellCaster.UpgradeAura();
+        }
         public void OnSkill2()
         {
             spellCaster.EquipSpikeSpell();
+        }
+        public void OnSkill2Upgrade()
+        {
+            spellCaster.UpgradeSpike();
         }
         public void OnSkill3()
         {
             spellCaster.EquipSplashSpell();
         }
+        public void OnSkill3Upgrade()
+        {
+            spellCaster.UpgradeSplash();
+        }
         public void OnSkill4()
         {
             spellCaster.EquipRaySpell();
+        }
+        public void OnSkill4Upgrade()
+        {
+            spellCaster.UpgradeRay();
         }
         public void OnFire() 
         {

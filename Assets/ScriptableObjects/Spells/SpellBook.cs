@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using PlanchaCorp.LD50.ScriptableObjects;
+using PlanchaCorp.LD50.Scripts.Player;
 
 namespace PlanchaCorp.LD50.ScriptableObjects {
     [CreateAssetMenu(menuName = "Scriptable Objects/Spells/Spell Book")]
@@ -8,6 +9,8 @@ namespace PlanchaCorp.LD50.ScriptableObjects {
     {
         [SerializeField]
         public List<GameObject> spells;
+        [SerializeField]
+        private IntVariable availableSkillPoints;
 
         public AuraSpellType EquippedAuraSpell;
         public SpikeSpellType EquippedSpikeSpell;
@@ -24,33 +27,96 @@ namespace PlanchaCorp.LD50.ScriptableObjects {
         private int DefaultRaySpellLevel;
         
         [SerializeField]
-        private SpellType AuraSpellType;
+        private SpellTypeArray AuraSpellTypeArray;
         [SerializeField]
-        private SpellType SpikeSpellType;
+        private SpellTypeArray SpikeSpellTypeArray;
         [SerializeField]
-        private SpellType SplashSpellType;
+        private SpellTypeArray SplashSpellTypeArray;
         [SerializeField]
-        private SpellType RaySpellType;
+        private SpellTypeArray RaySpellTypeArray;
 
         public void OnEnable() {
             EquippedAuraSpell = null;
             EquippedSpikeSpell = null;
             EquippedSplashSpell = null;
             EquippedRaySpell = null;
-            if (DefaultAuraSpellLevel > 0 && DefaultAuraSpellLevel <= AuraSpellType.spellVersions.Length) {
-                EquippedAuraSpell = (AuraSpellType)AuraSpellType.spellVersions[DefaultAuraSpellLevel - 1];
+            if (DefaultAuraSpellLevel > 0 && DefaultAuraSpellLevel <= AuraSpellTypeArray.spellVersions.Length) {
+                EquippedAuraSpell = (AuraSpellType)AuraSpellTypeArray.spellVersions[DefaultAuraSpellLevel - 1];
             }
-            if (DefaultSpikeSpellLevel > 0 && DefaultSpikeSpellLevel <= SpikeSpellType.spellVersions.Length)
+            if (DefaultSpikeSpellLevel > 0 && DefaultSpikeSpellLevel <= SpikeSpellTypeArray.spellVersions.Length)
             {
-                EquippedSpikeSpell = (SpikeSpellType)SpikeSpellType.spellVersions[DefaultSpikeSpellLevel - 1];
+                EquippedSpikeSpell = (SpikeSpellType)SpikeSpellTypeArray.spellVersions[DefaultSpikeSpellLevel - 1];
             }
-            if (DefaultSplashSpellLevel > 0 && DefaultSplashSpellLevel <= SplashSpellType.spellVersions.Length)
+            if (DefaultSplashSpellLevel > 0 && DefaultSplashSpellLevel <= SplashSpellTypeArray.spellVersions.Length)
             {
-                EquippedSplashSpell = (SplashSpellType)SplashSpellType.spellVersions[DefaultSplashSpellLevel - 1];
+                EquippedSplashSpell = (SplashSpellType)SplashSpellTypeArray.spellVersions[DefaultSplashSpellLevel - 1];
             }
-            if (DefaultRaySpellLevel > 0 && DefaultRaySpellLevel <= RaySpellType.spellVersions.Length)
+            if (DefaultRaySpellLevel > 0 && DefaultRaySpellLevel <= RaySpellTypeArray.spellVersions.Length)
             {
-                EquippedRaySpell = (RaySpellType)RaySpellType.spellVersions[DefaultRaySpellLevel - 1];
+                EquippedRaySpell = (RaySpellType)RaySpellTypeArray.spellVersions[DefaultRaySpellLevel - 1];
+            }
+        }
+
+        public bool AuraNextLevelExist()
+        {
+            return EquippedAuraSpell.Level < AuraSpellTypeArray.spellVersions.Length;
+        }
+        public bool SpikeNextLevelExist()
+        {
+            return EquippedSpikeSpell.Level < SpikeSpellTypeArray.spellVersions.Length;
+        }
+        public bool SplashNextLevelExist()
+        {
+            return EquippedSplashSpell.Level < SplashSpellTypeArray.spellVersions.Length;
+        }
+        public bool RayNextLevelExist()
+        {
+            return EquippedRaySpell.Level < RaySpellTypeArray.spellVersions.Length;
+        }
+
+        public void UpgradeAura()
+        {
+            if (AuraNextLevelExist() && availableSkillPoints.Value > 0) {
+                EquippedAuraSpell = (AuraSpellType)AuraSpellTypeArray.spellVersions[EquippedAuraSpell.Level];
+                availableSkillPoints.Value -= 1;
+            } else {
+
+            }
+        }
+        public void UpgradeSpike()
+        {
+            if (SpikeNextLevelExist() && availableSkillPoints.Value > 0)
+            {
+                EquippedSpikeSpell = (SpikeSpellType)SpikeSpellTypeArray.spellVersions[EquippedSpikeSpell.Level];
+                availableSkillPoints.Value -= 1;
+            }
+            else
+            {
+
+            }
+        }
+        public void UpgradeSplash()
+        {
+            if (SplashNextLevelExist() && availableSkillPoints.Value > 0)
+            {
+                EquippedSplashSpell = (SplashSpellType)SplashSpellTypeArray.spellVersions[EquippedSplashSpell.Level];
+                availableSkillPoints.Value -= 1;
+            }
+            else
+            {
+
+            }
+        }
+        public void UpgradeRay()
+        {
+            if (RayNextLevelExist() && availableSkillPoints.Value > 0)
+            {
+                EquippedRaySpell = (RaySpellType)RaySpellTypeArray.spellVersions[EquippedRaySpell.Level];
+                availableSkillPoints.Value -= 1;
+            }
+            else
+            {
+
             }
         }
     }

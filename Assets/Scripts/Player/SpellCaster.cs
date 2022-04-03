@@ -101,5 +101,21 @@ namespace PlanchaCorp.LD50.Scripts.Player
                 splashCooldown = EquippedSpell.Cooldown;
             }
         }
+
+        public void UpgradeAura() {
+            spellBook.UpgradeAura();
+        }
+        public void UpgradeSpike()
+        {
+            spellBook.UpgradeSpike();
+        }
+        public void UpgradeSplash()
+        {
+            spellBook.UpgradeSplash();
+        }
+        public void UpgradeRay()
+        {
+            spellBook.UpgradeRay();
+        }
     }
 }
