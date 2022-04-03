@@ -11,15 +11,17 @@ public class SpawnManager : MonoBehaviour
         private Vector2Variable playerPosition;
         [SerializeField]
         private SpawnSetting spawnSetting;
-        private int tick = 0;
+        private float tickSum;
         void Start()
         {
-
+            tickSum = 0;
         }
 
-        public void OnTick(){
-            tick++;
-            if(tick%spawnSetting.spawnRate == 0){
+        public void OnTick(GameEvent gameEvent){
+            var tickDelay = (float) gameEvent.Get();
+            tickSum += tickDelay;
+            if(tickSum >= spawnSetting.spawnRate){
+                tickSum = 0;
                 Vector2 pos = Random.insideUnitCircle.normalized * Random.Range(spawnSetting.minRange,spawnSetting.maxRange);
                 Instantiate(ally,playerPosition.Value + pos,Quaternion.identity);
             }
