@@ -8,6 +8,6 @@ namespace PlanchaCorp.LD50.ScriptableObjects
     public class SpikeSpellType : AbstractSpellType
     {
         [SerializeField]
-        private float Angle;
+        public float Angle;
     }
 }

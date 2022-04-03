@@ -10,7 +10,6 @@ namespace PlanchaCorp.LD50.Scripts.Spells
 
         [SerializeField]
         private FloatVariable opacity;
-        private float currentTime;
 
         private void Start()
         {

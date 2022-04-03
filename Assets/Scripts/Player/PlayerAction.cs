@@ -33,15 +33,19 @@ namespace PlanchaCorp.LD50.Scripts.Player {
         }
         public void OnSkill2()
         {
-            spellCaster.CastSpikeSpell();
+            spellCaster.EquipSpikeSpell();
         }
         public void OnSkill3()
         {
-            spellCaster.CastSplashSpell();
+            spellCaster.EquipSplashSpell();
         }
         public void OnSkill4()
         {
-            spellCaster.CastRaySpell();
+            spellCaster.EquipRaySpell();
+        }
+        public void OnFire() 
+        {
+            spellCaster.CastSpell();
         }
     }
 }
