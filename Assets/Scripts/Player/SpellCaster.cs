@@ -16,6 +16,10 @@ namespace PlanchaCorp.LD50.Scripts.Player
             CastAuraSpell();
         }
 
+        private void FixedUpdate() {
+            spikeCooldown = Mathf.Max(0, spikeCooldown -= Time.fixedDeltaTime);
+        }
+
         public void CastAuraSpell()
         {
             AuraSpellType auraSpell = spellBook.EquippedAuraSpell;
@@ -26,15 +30,17 @@ namespace PlanchaCorp.LD50.Scripts.Player
             }
         }
 
+        private float spikeCooldown = 0;
         public void CastSpikeSpell()
         {
             SpikeSpellType spikeSpell = spellBook.EquippedSpikeSpell;
-            if (spikeSpell != null)
+            if (spikeSpell != null && spikeCooldown == 0)
             {
                 GameObject spellPrefab = spikeSpell.Prefab;
                 GameObject spellCasted = Instantiate(spellPrefab, this.transform);
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
                 spellCasted.GetComponent<SpikeSpell>().Cast(spikeSpell, mousePosition);
+                spikeCooldown = spikeSpell.Cooldown;
             }
         }
     }
