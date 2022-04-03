@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: GroundRuleTile
+  m_Name: GroundRuleTile 1
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: -6199599056222338077, guid: 0bb2dc0d30bcce24088283bc23f3613e, type: 3}
   m_DefaultGameObject: {fileID: 0}
@@ -106,7 +106,7 @@ MonoBehaviour:
     m_RuleTransform: 1
   - m_Id: 5
     m_Sprites:
-    - {fileID: -802208206863218891, guid: 0bb2dc0d30bcce24088283bc23f3613e, type: 3}
+    - {fileID: -6199599056222338077, guid: 0bb2dc0d30bcce24088283bc23f3613e, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
