@@ -9,13 +9,13 @@ namespace PlanchaCorp.LD50.ScriptableObjects
         [SerializeField]
         public GameObject Prefab;
         [SerializeField]
-        private float Range;
+        public float Range;
         [SerializeField]
-        private float HealAmount;
+        public float HealAmount;
         [SerializeField]
-        private float MaxDuration;
+        public float MaxDuration;
         [SerializeField]
-        private float Cooldown;
+        public float Cooldown;
 
         [SerializeField]
         public int Level;

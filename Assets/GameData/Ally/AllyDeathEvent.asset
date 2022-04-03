@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24a287272e7ca58d6986a9a4dab783f3, type: 3}
-  m_Name: AllyDeathPublisher
+  m_Name: AllyDeathEvent
   m_EditorClassIdentifier: 

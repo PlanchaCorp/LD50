@@ -102,11 +102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {fileID: 11400000, guid: 82c52a45e3ad07b0891016e2e582e521, type: 2}
   position: {fileID: 11400000, guid: 2661059668d73e46e843f3ac2634a0f4, type: 2}
-  spellBook: {fileID: 11400000, guid: e623824f031be7cabb13ee107e42bd9e, type: 2}
-  auraSpellEvent: {fileID: 11400000, guid: dab5e1e4c3fbc84f0b983b5d78ebc240, type: 2}
-  spikeSpellEvent: {fileID: 11400000, guid: fba36298331e2fad3a49611830b47074, type: 2}
-  splashSpellEvent: {fileID: 11400000, guid: e7d9bf6742774094a9e62d8af2e2e40e, type: 2}
-  raySpellEvent: {fileID: 11400000, guid: f9d1aea564ca71322a0cc36cd20a9cbd, type: 2}
 --- !u!114 &6444778620716332214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,10 +197,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8344495584796127883}
   - component: {fileID: 7689842483935539283}
-  - component: {fileID: 8366898674235704683}
-  - component: {fileID: 8447934655477060924}
-  - component: {fileID: 8970253706707588609}
-  - component: {fileID: 6372929978479483339}
   m_Layer: 0
   m_Name: Gremory
   m_TagString: Untagged
@@ -240,115 +231,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellBook: {fileID: 11400000, guid: e623824f031be7cabb13ee107e42bd9e, type: 2}
---- !u!114 &8366898674235704683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5241969494941409858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec31ebeb221abc73ad449102fee72d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventPublisher: {fileID: 11400000, guid: dab5e1e4c3fbc84f0b983b5d78ebc240, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7689842483935539283}
-        m_TargetAssemblyTypeName: SpellCaster, Assembly-CSharp
-        m_MethodName: CastAuraSpell
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &8447934655477060924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5241969494941409858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec31ebeb221abc73ad449102fee72d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventPublisher: {fileID: 11400000, guid: fba36298331e2fad3a49611830b47074, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7689842483935539283}
-        m_TargetAssemblyTypeName: SpellCaster, Assembly-CSharp
-        m_MethodName: CastAuraSpell
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &8970253706707588609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5241969494941409858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec31ebeb221abc73ad449102fee72d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventPublisher: {fileID: 11400000, guid: e7d9bf6742774094a9e62d8af2e2e40e, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7689842483935539283}
-        m_TargetAssemblyTypeName: SpellCaster, Assembly-CSharp
-        m_MethodName: CastAuraSpell
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &6372929978479483339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5241969494941409858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec31ebeb221abc73ad449102fee72d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventPublisher: {fileID: 11400000, guid: f9d1aea564ca71322a0cc36cd20a9cbd, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7689842483935539283}
-        m_TargetAssemblyTypeName: SpellCaster, Assembly-CSharp
-        m_MethodName: CastAuraSpell
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
