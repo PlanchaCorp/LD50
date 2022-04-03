@@ -5,11 +5,13 @@ using PlanchaCorp.LD50.ScriptableObjects;
 
 namespace PlanchaCorp.LD50.Scripts.Spells
 {
-    public class SpikeSpell : GenericInstantSpell
+    public class RaySpell : GenericInstantSpell
     {
-        public void Cast(SpikeSpellType spikeSpell, Vector2 castPosition)
+        public void Cast(RaySpellType raySpell, Vector2 castPosition)
         {
-            base.Cast(spikeSpell);
+            base.Cast(raySpell);
+            // Setting the width
+            transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y * raySpell.Width);
             // Setting the angle
             Vector2 direction = castPosition - (Vector2)transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;

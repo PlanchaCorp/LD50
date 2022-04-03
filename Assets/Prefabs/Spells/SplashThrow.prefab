@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4354217015160284637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3276853224198823407}
   m_RootOrder: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.27282754, g: 0.8113208, b: 0.21813813, a: 0.6156863}
+  m_Color: {r: 0.06452473, g: 0.5471698, b: 0.16309376, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -91,11 +91,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3276853224198823407}
-  - component: {fileID: 1781884888}
-  - component: {fileID: 1475146811341481247}
+  - component: {fileID: 5656628167566516716}
   - component: {fileID: 2979779369150203364}
   m_Layer: 0
-  m_Name: Aura
+  m_Name: SplashThrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +115,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1781884888
+--- !u!114 &5656628167566516716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,38 +124,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7941984446237351741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec31ebeb221abc73ad449102fee72d1, type: 3}
+  m_Script: {fileID: 11500000, guid: b5237d2307ff44e4397a214239f172f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EventPublisher: {fileID: 11400000, guid: 8e1a7eed176801002a15a22f7887d912, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1475146811341481247}
-        m_TargetAssemblyTypeName: PlanchaCorp.LD50.Scripts.Spells.GenericSpell, Assembly-CSharp
-        m_MethodName: HealAllies
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1475146811341481247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7941984446237351741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7114d7051981d6e04aec98fed31566c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  opacity: {fileID: 11400000, guid: a55f8dbfbd44cfcd1b0decd007f961a7, type: 2}
+  explosionPrefab: {fileID: -6406727286628254696, guid: 7f45fca8893abfd05a115af1623959de, type: 3}
 --- !u!58 &2979779369150203364
 CircleCollider2D:
   m_ObjectHideFlags: 0

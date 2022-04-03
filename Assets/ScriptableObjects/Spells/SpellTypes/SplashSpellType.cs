@@ -9,5 +9,9 @@ namespace PlanchaCorp.LD50.ScriptableObjects
     {
         [SerializeField]
         private float Radius;
+        [SerializeField]
+        public float Duration;
+        [SerializeField]
+        public float ThrowSpeed;
     }
 }

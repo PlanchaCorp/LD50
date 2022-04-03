@@ -33,20 +33,15 @@ namespace PlanchaCorp.LD50.Scripts.Player {
         }
         public void OnSkill2()
         {
-            Debug.Log("skill 2");
             spellCaster.CastSpikeSpell();
         }
         public void OnSkill3()
         {
-            // GameEvent spellEvent = new GameEvent(this);
-            // splashSpellEvent.Raise(spellEvent);
-            Debug.Log("Skill 3");
+            spellCaster.CastSplashSpell();
         }
         public void OnSkill4()
         {
-            // GameEvent spellEvent = new GameEvent(this);
-            // raySpellEvent.Raise(spellEvent);
-            Debug.Log("Skill 4");
+            spellCaster.CastRaySpell();
         }
     }
 }
