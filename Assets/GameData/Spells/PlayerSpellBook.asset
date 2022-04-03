@@ -21,7 +21,7 @@ MonoBehaviour:
   DefaultAuraSpellLevel: 1
   DefaultSpikeSpellLevel: 1
   DefaultSplashSpellLevel: 0
-  DefaultRaySpellLevel: 0
+  DefaultRaySpellLevel: 1
   AuraSpellType: {fileID: 11400000, guid: de786beaaf5b4a859b104198f14f3c69, type: 2}
   SpikeSpellType: {fileID: 11400000, guid: aad54d03edd9c5503ab73820ed378702, type: 2}
   SplashSpellType: {fileID: 11400000, guid: e3b1efc51b8ca509db84eac76465be4b, type: 2}

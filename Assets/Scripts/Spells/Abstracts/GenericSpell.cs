@@ -5,7 +5,6 @@ using PlanchaCorp.LD50.ScriptableObjects;
 
 namespace PlanchaCorp.LD50.Scripts.Spells
 {
-    [RequireComponent(typeof(SpriteRenderer))]
     public abstract class GenericSpell : MonoBehaviour
     {
         protected AbstractSpellType spell;
@@ -15,7 +14,7 @@ namespace PlanchaCorp.LD50.Scripts.Spells
         private float endTime = 0;
         private void Awake() {
             alliesInRange = new List<GameObject>();
-            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         }
 
         public void Cast(AbstractSpellType spellType) {

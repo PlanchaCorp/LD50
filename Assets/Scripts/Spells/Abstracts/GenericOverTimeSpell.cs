@@ -7,12 +7,19 @@ namespace PlanchaCorp.LD50.Scripts.Spells
 {
     public class GenericOverTimeSpell : GenericSpell
     {
+
         [SerializeField]
         private FloatVariable opacity;
+        private float currentTime;
 
         private void Start()
         {
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, opacity.Value);
+        }
+
+        public void Cast(AbstractSpellType spellType, Vector2 castPosition)
+        {
+            base.Cast(spellType);
         }
 
         public void HealAllies(GameEvent clockTickEvent)

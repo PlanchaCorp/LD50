@@ -8,6 +8,6 @@ namespace PlanchaCorp.LD50.ScriptableObjects
     public class RaySpellType : AbstractSpellType
     {
         [SerializeField]
-        private float Width;
+        public float Width;
     }
 }
