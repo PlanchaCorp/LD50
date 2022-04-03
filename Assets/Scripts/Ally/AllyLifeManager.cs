@@ -10,6 +10,8 @@ namespace PlanchaCorp.LD50.Scripts
         [SerializeField]
         private GameEventPublisher allyDeath;
         [SerializeField]
+        private GameEventPublisher expEmit;
+        [SerializeField]
         private FloatVariable maxHealth;
         public float currentHealth;
         private HealthBar healthBar;
@@ -34,8 +36,10 @@ namespace PlanchaCorp.LD50.Scripts
         public void Heal(float healingAmount) {
             this.currentHealth = this.currentHealth + healingAmount;
             if (this.currentHealth > maxHealth.Value) {
+                healingAmount = this.currentHealth - maxHealth.Value;
                 this.currentHealth = maxHealth.Value;
             }
+            expEmit.Raise(new GameEvent(Mathf.FloorToInt(healingAmount)));
         }
         public void Die(){
             GameEvent deathEvent = new GameEvent(this);

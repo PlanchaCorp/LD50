@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allyDeath: {fileID: 11400000, guid: 9e0548cc10d3d29808421cab906aeedf, type: 2}
+  expEmit: {fileID: 11400000, guid: 78401dfd128fa787d871805e09918833, type: 2}
   maxHealth: {fileID: 11400000, guid: 5851780003e7aecc2baad86ff242fa5b, type: 2}
   currentHealth: 0
 --- !u!114 &1717998282732978895

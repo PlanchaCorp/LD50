@@ -6,6 +6,9 @@ namespace PlanchaCorp.LD50.ScriptableObjects
     {
         private Object Value;
 
+        public GameEvent(){
+        }
+
         public GameEvent(Object value) {
             this.Value = value;
         }

@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PlanchaCorp.LD50.ScriptableObjects;
 
+namespace PlanchaCorp.LD50.Scripts{
+}
 public class UIExpBar : MonoBehaviour
 {
     private Slider expBar;
@@ -12,7 +15,8 @@ public class UIExpBar : MonoBehaviour
         this.expBar = this.GetComponent<Slider>();
     }
 
-    public void progress(float amount,float total){
-        this.expBar.value = amount/total;
+    public void Progress(GameEvent amount){
+        this.expBar.value = (float)amount.Get();
     }
 }
+    

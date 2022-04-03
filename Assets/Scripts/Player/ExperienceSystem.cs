@@ -13,13 +13,25 @@ namespace PlanchaCorp.LD50.Scripts.Player
         private IntVariable levelAmount;
         [SerializeField]
         private IntVariable maxXpPerLevel;
+        [SerializeField]
+        private GameEventPublisher expRender;
+        [SerializeField]
+        private GameEventPublisher levelUpEvent;
+
+        public void Update(){
+            expRender.Raise(new GameEvent((float)experienceAmount.Value/(float)maxXpPerLevel.Value));
+        }
 
         public void GainExperience(GameEvent gainExperienceEvent) {
-            int xpSum = experienceAmount.Value + (int)gainExperienceEvent.Get();
-            if (maxXpPerLevel.Value > 0 && xpSum > maxXpPerLevel.Value) {
-                levelAmount.Value += xpSum / maxXpPerLevel.Value;
+            experienceAmount.Value = experienceAmount.Value + (int)gainExperienceEvent.Get();
+            if(experienceAmount.Value>=maxXpPerLevel.Value) {
+                levelUpEvent.Raise(new GameEvent());
             }
-            experienceAmount.Value = xpSum % maxXpPerLevel.Value;
+        }
+        public void OnLevelUp(){
+            this.levelAmount.Value ++;
+            this.experienceAmount.Value = 0;
+            this.maxXpPerLevel.Value = Mathf.CeilToInt(maxXpPerLevel.DefaultValue * Mathf.Pow( 1.5f , (float) levelAmount.Value));
         }
     }
 }

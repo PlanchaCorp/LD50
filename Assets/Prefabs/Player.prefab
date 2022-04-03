@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6444778620716332214}
   - component: {fileID: 3401588654400433339}
   - component: {fileID: 653216075230635140}
+  - component: {fileID: 175907408}
+  - component: {fileID: 175907409}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -117,6 +119,8 @@ MonoBehaviour:
   experienceAmount: {fileID: 11400000, guid: 96aba858c1b423df38c7ec621cbe74e5, type: 2}
   levelAmount: {fileID: 11400000, guid: 784ac0cd2568fdec8aadea3adb3d0bab, type: 2}
   maxXpPerLevel: {fileID: 11400000, guid: 58e8b11c2db88cc50b1078b50c09b6ee, type: 2}
+  expRender: {fileID: 11400000, guid: 22527ff705e5b1f509097b9d228105c9, type: 2}
+  levelUpEvent: {fileID: 11400000, guid: a9cb1398e601c735ebc897ff5b91ff4e, type: 2}
 --- !u!95 &3401588654400433339
 Animator:
   serializedVersion: 3
@@ -187,6 +191,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &175907408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4450369992917332793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec31ebeb221abc73ad449102fee72d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventPublisher: {fileID: 11400000, guid: 78401dfd128fa787d871805e09918833, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6444778620716332214}
+        m_TargetAssemblyTypeName: PlanchaCorp.LD50.Scripts.Player.ExperienceSystem,
+          Assembly-CSharp
+        m_MethodName: GainExperience
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &175907409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4450369992917332793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec31ebeb221abc73ad449102fee72d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventPublisher: {fileID: 11400000, guid: a9cb1398e601c735ebc897ff5b91ff4e, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6444778620716332214}
+        m_TargetAssemblyTypeName: PlanchaCorp.LD50.Scripts.Player.ExperienceSystem,
+          Assembly-CSharp
+        m_MethodName: OnLevelUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5241969494941409858
 GameObject:
   m_ObjectHideFlags: 0
