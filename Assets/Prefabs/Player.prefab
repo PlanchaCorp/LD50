@@ -119,6 +119,7 @@ MonoBehaviour:
   experienceAmount: {fileID: 11400000, guid: 96aba858c1b423df38c7ec621cbe74e5, type: 2}
   levelAmount: {fileID: 11400000, guid: 784ac0cd2568fdec8aadea3adb3d0bab, type: 2}
   maxXpPerLevel: {fileID: 11400000, guid: 58e8b11c2db88cc50b1078b50c09b6ee, type: 2}
+  AvailableSkillPoints: {fileID: 11400000, guid: ba6b805c4d0c9a9019b070dcb0fc5dfb, type: 2}
   expRender: {fileID: 11400000, guid: 22527ff705e5b1f509097b9d228105c9, type: 2}
   levelUpEvent: {fileID: 11400000, guid: a9cb1398e601c735ebc897ff5b91ff4e, type: 2}
 --- !u!95 &3401588654400433339

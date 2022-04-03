@@ -9,13 +9,12 @@ namespace PlanchaCorp.LD50.Scripts.Spells
     {
         [SerializeField]
         private SplashSpellExplosion explosionPrefab;
-        private Vector2 direction;
+        private Vector2 direction = Vector2.zero;
         private float throwSpeed;
         private float maxDistance;
-        private float currentDistance;
+        private float currentDistance = 0;
 
         public void Start() {
-            currentDistance = 0;
         }
         public void Update() {
             Vector2 translation = direction * throwSpeed * Time.deltaTime;
@@ -31,9 +30,11 @@ namespace PlanchaCorp.LD50.Scripts.Spells
         public void Cast(SplashSpellType splashSpell, Vector2 castPosition)
         {
             base.Cast(splashSpell);
+            currentDistance = 0;
             throwSpeed = splashSpell.ThrowSpeed;
-            maxDistance = splashSpell.Range;
-            direction = (castPosition - (Vector2)transform.position).normalized;
+            Vector2 distance = castPosition - (Vector2)transform.position;
+            maxDistance = Mathf.Min(splashSpell.Range, distance.magnitude);
+            direction = distance.normalized;
         }
     }
 }

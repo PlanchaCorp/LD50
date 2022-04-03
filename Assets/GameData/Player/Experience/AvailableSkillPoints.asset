@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fefb3cff671c44358a36a10f7e35862d, type: 3}
-  m_Name: SplashOpacity
+  m_Script: {fileID: 11500000, guid: 08e24930d35dbe235bd30b9c98c3ba9e, type: 3}
+  m_Name: AvailableSkillPoints
   m_EditorClassIdentifier: 
-  Value: 0.4
+  Value: 0
   ResetValueOnStart: 0
   DefaultValue: 0

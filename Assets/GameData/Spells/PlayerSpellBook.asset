@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spells:
   - {fileID: 7941984446237351741, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
-  EquippedAuraSpell: {fileID: 11400000, guid: e2477893e80e9f5ec8972cf7efe3ea9b, type: 2}
-  EquippedSpikeSpell: {fileID: 11400000, guid: 14c5598109c5fc30e9b527b2ea5e14ee, type: 2}
+  experienceSystem: {fileID: 0}
+  EquippedAuraSpell: {fileID: 0}
+  EquippedSpikeSpell: {fileID: 0}
   EquippedSplashSpell: {fileID: 0}
-  EquippedRaySpell: {fileID: 11400000, guid: 09eed3be0607c70f69d4b778aab4c274, type: 2}
+  EquippedRaySpell: {fileID: 0}
   DefaultAuraSpellLevel: 1
   DefaultSpikeSpellLevel: 1
   DefaultSplashSpellLevel: 1
   DefaultRaySpellLevel: 1
-  AuraSpellType: {fileID: 11400000, guid: de786beaaf5b4a859b104198f14f3c69, type: 2}
-  SpikeSpellType: {fileID: 11400000, guid: aad54d03edd9c5503ab73820ed378702, type: 2}
-  SplashSpellType: {fileID: 11400000, guid: e3b1efc51b8ca509db84eac76465be4b, type: 2}
-  RaySpellType: {fileID: 11400000, guid: 11016450043ee055f93ae517f771c614, type: 2}
+  AuraSpellTypeArray: {fileID: 11400000, guid: de786beaaf5b4a859b104198f14f3c69, type: 2}
+  SpikeSpellTypeArray: {fileID: 11400000, guid: aad54d03edd9c5503ab73820ed378702, type: 2}
+  SplashSpellTypeArray: {fileID: 11400000, guid: e3b1efc51b8ca509db84eac76465be4b, type: 2}
+  RaySpellTypeArray: {fileID: 11400000, guid: 11016450043ee055f93ae517f771c614, type: 2}

@@ -12,6 +12,8 @@ namespace PlanchaCorp.LD50.Scripts.Player
         [SerializeField]
         private SpellBook spellBook;
 
+        private AbstractSpellType EquippedSpell;
+
         private void Start() {
             CastAuraSpell();
         }
@@ -20,6 +22,31 @@ namespace PlanchaCorp.LD50.Scripts.Player
             spikeCooldown = Mathf.Max(0, spikeCooldown -= Time.fixedDeltaTime);
             rayCooldown = Mathf.Max(0, rayCooldown -= Time.fixedDeltaTime);
             splashCooldown = Mathf.Max(0, splashCooldown -= Time.fixedDeltaTime);
+        }
+
+        public void EquipSpikeSpell()
+        {
+            SpikeSpellType spikeSpell = spellBook.EquippedSpikeSpell;
+            if (spikeSpell != null)
+            {
+                EquippedSpell = spikeSpell;
+            }
+        }
+        public void EquipSplashSpell()
+        {
+            SplashSpellType spikeSpell = spellBook.EquippedSplashSpell;
+            if (spikeSpell != null)
+            {
+                EquippedSpell = spikeSpell;
+            }
+        }
+        public void EquipRaySpell()
+        {
+            RaySpellType spikeSpell = spellBook.EquippedRaySpell;
+            if (spikeSpell != null)
+            {
+                EquippedSpell = spikeSpell;
+            }
         }
 
         public void CastAuraSpell()
@@ -33,45 +60,62 @@ namespace PlanchaCorp.LD50.Scripts.Player
         }
 
         private float spikeCooldown = 0;
-        public void CastSpikeSpell()
-        {
-            SpikeSpellType spikeSpell = spellBook.EquippedSpikeSpell;
-            if (spikeSpell != null && spikeCooldown == 0)
-            {
-                GameObject spellPrefab = spikeSpell.Prefab;
-                GameObject spellCasted = Instantiate(spellPrefab, this.transform);
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-                spellCasted.GetComponent<SpikeSpell>().Cast(spikeSpell, mousePosition);
-                spikeCooldown = spikeSpell.Cooldown;
-            }
-        }
-
         private float rayCooldown = 0;
-        public void CastRaySpell()
+        private float splashCooldown = 0;
+        public void CastSpell()
         {
-            RaySpellType raySpell = spellBook.EquippedRaySpell;
-            if (raySpell != null && rayCooldown == 0)
-            {
-                GameObject spellPrefab = raySpell.Prefab;
+            if (EquippedSpell == null) {
+                return;
+            }
+            if (EquippedSpell.GetType() == typeof(SpikeSpellType)) {
+                if (spikeCooldown > 0) {
+                    return;
+                }
+                GameObject spellPrefab = EquippedSpell.Prefab;
                 GameObject spellCasted = Instantiate(spellPrefab, this.transform);
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-                spellCasted.GetComponent<RaySpell>().Cast(raySpell, mousePosition);
-                rayCooldown = raySpell.Cooldown;
+                spellCasted.GetComponent<SpikeSpell>().Cast((SpikeSpellType)EquippedSpell, mousePosition);
+                spikeCooldown = EquippedSpell.Cooldown;
+            } else if (EquippedSpell.GetType() == typeof(RaySpellType))
+            {
+                if (rayCooldown > 0)
+                {
+                    return;
+                }
+                GameObject spellPrefab = EquippedSpell.Prefab;
+                GameObject spellCasted = Instantiate(spellPrefab, this.transform);
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+                spellCasted.GetComponent<RaySpell>().Cast((RaySpellType)EquippedSpell, mousePosition);
+                rayCooldown = EquippedSpell.Cooldown;
+            }
+            else if (EquippedSpell.GetType() == typeof(SplashSpellType))
+            {
+                if (splashCooldown > 0)
+                {
+                    return;
+                }
+                GameObject spellPrefab = EquippedSpell.Prefab;
+                GameObject spellCasted = Instantiate(spellPrefab, transform.position, transform.rotation);
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+                spellCasted.GetComponent<SplashSpellThrow>().Cast((SplashSpellType)EquippedSpell, mousePosition);
+                splashCooldown = EquippedSpell.Cooldown;
             }
         }
 
-        private float splashCooldown = 0;
-        public void CastSplashSpell()
+        public void UpgradeAura() {
+            spellBook.UpgradeAura();
+        }
+        public void UpgradeSpike()
         {
-            SplashSpellType splashSpell = spellBook.EquippedSplashSpell;
-            if (splashSpell != null && splashCooldown == 0)
-            {
-                GameObject spellPrefab = splashSpell.Prefab;
-                GameObject spellCasted = Instantiate(spellPrefab);
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-                spellCasted.GetComponent<SplashSpellThrow>().Cast(splashSpell, mousePosition);
-                splashCooldown = splashSpell.Cooldown;
-            }
+            spellBook.UpgradeSpike();
+        }
+        public void UpgradeSplash()
+        {
+            spellBook.UpgradeSplash();
+        }
+        public void UpgradeRay()
+        {
+            spellBook.UpgradeRay();
         }
     }
 }
