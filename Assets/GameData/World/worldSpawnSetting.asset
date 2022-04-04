@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minRange: 18
   maxRange: 18
-  spawnRate: 4.91
+  spawnRate: 2.8399994
   spawnRateEvolution: -0.09

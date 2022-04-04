@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a0b7ac5337f199d49258beb6d768846, type: 3}
-  m_Name: Splash1
+  m_Name: Splash1 3
   m_EditorClassIdentifier: 
-  Level: 1
+  Level: 4
   Prefab: {fileID: 7941984446237351741, guid: fb7f7fe7f94ebd6abbb523cc340f6ce5, type: 3}
   Range: 18
-  HealAmount: 1
-  Cooldown: 10
+  HealAmount: 2
+  Cooldown: 9
   Radius: 3
-  Duration: 4
+  Duration: 5
   ThrowSpeed: 20
