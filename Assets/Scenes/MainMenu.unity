@@ -1092,7 +1092,9 @@ MonoBehaviour:
     Developpement
 
     Sound
-    Design'
+    Design
+
+    Cover Art'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 28b6a520fdbb8ec48a2fc07b2f29fc1c, type: 2}
   m_sharedMaterial: {fileID: 6452283572847331620, guid: 28b6a520fdbb8ec48a2fc07b2f29fc1c, type: 2}
@@ -3015,7 +3017,9 @@ MonoBehaviour:
     Olivier
     Brissez
 
-    Guillaume De Tomasi'
+    Guillaume De Tomasi
+
+    Agloo'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 28b6a520fdbb8ec48a2fc07b2f29fc1c, type: 2}
   m_sharedMaterial: {fileID: 6452283572847331620, guid: 28b6a520fdbb8ec48a2fc07b2f29fc1c, type: 2}
@@ -3287,7 +3291,7 @@ MonoBehaviour:
 
     2, 3, 4
 
-    Alt + 1, 2, 3, 4
+    Shift + 1, 2, 3, 4
 
     Mouse'
   m_isRightToLeft: 0
