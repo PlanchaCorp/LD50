@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opacity: {fileID: 11400000, guid: e2613b982e8e44a8ca108ea860352158, type: 2}
-  splashSound: {fileID: 2560136846720346621}
+  explosionSound: {fileID: 2560136846720346621}
 --- !u!114 &1781884888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9ca6bc52d0d6ef15f946618bfc1e6cd5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 11d08dc74fad6ce4cae84b5b813ea323, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
