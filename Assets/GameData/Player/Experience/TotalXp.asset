@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TotalXp
   m_EditorClassIdentifier: 
   Value: 0
-  ResetValueOnStart: 0
+  ResetValueOnStart: 1
   DefaultValue: 0
