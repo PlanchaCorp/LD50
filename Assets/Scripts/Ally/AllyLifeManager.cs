@@ -37,11 +37,10 @@ namespace PlanchaCorp.LD50.Scripts
         void Update()
         {
             this.healthBar.UpdateSlider(currentHealth,maxHealth.Value);
-            if(this.currentHealth<=0){
-                Die();
-            }
             if (isDying) {
                 deathTime += Time.deltaTime;
+            } else if (this.currentHealth <= 0) {
+                Die();
             }
         }
         public void Hurt(GameEvent gameEvent) {
@@ -61,20 +60,27 @@ namespace PlanchaCorp.LD50.Scripts
         }
 
         public void Die(){
+            isDying = true;
             GameEvent deathEvent = new GameEvent(this);
             allyDeath.Raise(deathEvent);
-            StartCoroutine(Die(2));
-        }
-
-        public IEnumerator Die(float delay) {
-            float opacity = Mathf.Lerp(delay, 0, deathTime);
-            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, opacity);
+            // StartCoroutine(Die(2));
             if (deathSounds.Length > 0) {
                 int randomSoundId = Mathf.FloorToInt(Random.Range(0, deathSounds.Length - 0.01f));
                 deathSounds[randomSoundId].Play();
             }
-            yield return new WaitForSeconds(delay);
             Destroy(gameObject);
         }
+
+        // Wanted to do some fade out animation on death, but have to properly disable everything for it to work
+        // public IEnumerator Die(float delay) {
+        //     float opacity = Mathf.Lerp(delay, 0, deathTime);
+        //     spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, opacity);
+        //     if (deathSounds.Length > 0) {
+        //         int randomSoundId = Mathf.FloorToInt(Random.Range(0, deathSounds.Length - 0.01f));
+        //         deathSounds[randomSoundId].Play();
+        //     }
+        //     yield return new WaitForSeconds(delay);
+        //     Destroy(gameObject);
+        // }
     }
 }

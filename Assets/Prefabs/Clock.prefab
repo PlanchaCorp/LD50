@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7171157517917608478}
   - component: {fileID: 4979539058396478278}
+  - component: {fileID: 7022738087470676515}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Untagged
@@ -45,3 +46,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tickDelay: {fileID: 11400000, guid: 59df29884a87b6281900ab2eb7e0d150, type: 2}
   onTickEvent: {fileID: 11400000, guid: 8e1a7eed176801002a15a22f7887d912, type: 2}
+--- !u!114 &7022738087470676515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6609925474658436307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec31ebeb221abc73ad449102fee72d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventPublisher: {fileID: 11400000, guid: b2daa76f5c26977c28eeaac4af4282a8, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4979539058396478278}
+        m_TargetAssemblyTypeName: PlanchaCorp.LD50.Scripts.ClockTicker, Assembly-CSharp
+        m_MethodName: OnGameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
