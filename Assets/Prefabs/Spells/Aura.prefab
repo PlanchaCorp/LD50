@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4354217015160284637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalPosition: {x: 0, y: -0.58, z: 0}
+  m_LocalScale: {x: 1.9999999, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3276853224198823407}
   m_RootOrder: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1bba531d62b7cbb45a7a78124cc4fd6e, type: 3}
   m_Color: {r: 0.27282754, g: 0.8113208, b: 0.21813813, a: 0.6156863}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 3276853224198823407}
   - component: {fileID: 1781884888}
   - component: {fileID: 1475146811341481247}
-  - component: {fileID: 2979779369150203364}
+  - component: {fileID: 3755270545436718244}
   m_Layer: 0
   m_Name: Aura
   m_TagString: Untagged
@@ -157,8 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opacity: {fileID: 11400000, guid: a55f8dbfbd44cfcd1b0decd007f961a7, type: 2}
---- !u!58 &2979779369150203364
-CircleCollider2D:
+--- !u!60 &3755270545436718244
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -171,5 +171,22 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 5
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 12.990681, y: -0.122652054}
+      - {x: 11.157541, y: 5.6015167}
+      - {x: 0.055924416, y: 6.858575}
+      - {x: -11.15068, y: 5.608509}
+      - {x: -12.966186, y: -0.053362846}
+      - {x: -11.333162, y: -5.6203794}
+      - {x: 0.10665095, y: -6.6187706}
+      - {x: 10.9747305, y: -5.705187}

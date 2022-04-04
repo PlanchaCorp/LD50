@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4354217015160284637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 3276853224198823407}
   m_RootOrder: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1bba531d62b7cbb45a7a78124cc4fd6e, type: 3}
   m_Color: {r: 0.27282754, g: 0.8113208, b: 0.21813813, a: 0.6156863}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,8 +93,8 @@ GameObject:
   - component: {fileID: 3276853224198823407}
   - component: {fileID: -6406727286628254696}
   - component: {fileID: 1781884888}
-  - component: {fileID: 2979779369150203364}
   - component: {fileID: 2560136846720346621}
+  - component: {fileID: 6430648081409540929}
   m_Layer: 0
   m_Name: SplashExplosion
   m_TagString: Untagged
@@ -160,22 +160,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!58 &2979779369150203364
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7941984446237351741}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 5
 --- !u!82 &2560136846720346621
 AudioSource:
   m_ObjectHideFlags: 0
@@ -272,3 +256,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!60 &6430648081409540929
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7941984446237351741}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 5.6411014, y: 2.9123044}
+      - {x: 0, y: 3.2429361}
+      - {x: -5.5865726, y: 2.8281531}
+      - {x: -6.638502, y: -0.011402518}
+      - {x: -5.514234, y: -2.8116388}
+      - {x: -0.037840605, y: -3.3723729}
+      - {x: 5.6744447, y: -2.851691}
+      - {x: 6.5583963, y: -0.17161211}

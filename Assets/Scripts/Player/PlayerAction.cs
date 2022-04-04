@@ -20,13 +20,18 @@ namespace PlanchaCorp.LD50.Scripts.Player {
         private Rigidbody2D rb;
         private Vector2 direction = Vector2.zero;
         private SpellCaster spellCaster;
+        private AudioSource footstepSound;
 
         public void Start(){
             rb = GetComponent<Rigidbody2D>();
             spellCaster = GetComponentInChildren<SpellCaster>();
+            footstepSound = GetComponent<AudioSource>();
         }
         public void OnMove (InputValue input){
             this.direction = input.Get<Vector2>().normalized;
+            if (footstepSound != null) {
+                footstepSound.volume = direction != Vector2.zero ? 1 : 0;
+            }
         }
         public void FixedUpdate(){
             this.rb.velocity = direction * speed.Value;
