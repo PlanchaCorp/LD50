@@ -16,5 +16,5 @@ MonoBehaviour:
   Prefab: {fileID: 7941984446237351741, guid: 41c04b813007e8a7aa8a58d7ce78d05c, type: 3}
   Range: 1
   HealAmount: 3
-  Cooldown: 9
-  Angle: 32
+  Cooldown: 7
+  Angle: 45
