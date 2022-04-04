@@ -328,6 +328,7 @@ MonoBehaviour:
   spellBook: {fileID: 11400000, guid: e623824f031be7cabb13ee107e42bd9e, type: 2}
   castSpellEvent: {fileID: 11400000, guid: dab5e1e4c3fbc84f0b983b5d78ebc240, type: 2}
   equipSpellEvent: {fileID: 11400000, guid: 83dc9e375f15ef9ae9b0fc851b5a94de, type: 2}
+  unavailableActionEvent: {fileID: 11400000, guid: 95a9a8f55cc6e1edcb62146508ee3e2a, type: 2}
   skillPoint: {fileID: 11400000, guid: ba6b805c4d0c9a9019b070dcb0fc5dfb, type: 2}
 --- !u!114 &634850735
 MonoBehaviour:
