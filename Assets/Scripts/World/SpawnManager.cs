@@ -11,6 +11,8 @@ public class SpawnManager : MonoBehaviour
         private Vector2Variable playerPosition;
         [SerializeField]
         private SpawnSetting spawnSetting;
+        [SerializeField]
+        private GameEventPublisher allyBirthEvent;
         private float tickSum;
         void Start()
         {
@@ -24,11 +26,12 @@ public class SpawnManager : MonoBehaviour
                 tickSum = 0;
                 Vector2 pos = Random.insideUnitCircle.normalized * Random.Range(spawnSetting.minRange,spawnSetting.maxRange);
                 Instantiate(ally,playerPosition.Value + pos,Quaternion.identity);
+                allyBirthEvent.Raise(new GameEvent());
                 updateRate();
             }
         }
         private void updateRate(){
-            spawnSetting.spawnRate = spawnSetting.spawnRate + spawnSetting.spawnRateEvolution;
+            spawnSetting.spawnRate = Mathf.Max(spawnSetting.spawnRate + spawnSetting.spawnRateEvolution, spawnSetting.spawnRateMin);
         }
     }
 }

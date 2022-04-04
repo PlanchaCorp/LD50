@@ -11,19 +11,27 @@ namespace PlanchaCorp.LD50.Scripts {
         private FloatVariable tickDelay;
         [SerializeField]
         private GameEventPublisher onTickEvent;
+
+        private bool isGameOver;
+
         void OnEnable()
         {
+            isGameOver = false;
             StartCoroutine("tick");
         }
         void OnDisable(){
             StopCoroutine("tick");
         }
         IEnumerator tick(){
-            for(;;) {
+            while(!isGameOver) {
                 GameEvent tickEvent = new GameEvent(tickDelay.Value);
                 onTickEvent.Raise(tickEvent);
                 yield return new WaitForSeconds(tickDelay.Value);
             }
+        }
+
+        public void OnGameOver() {
+            isGameOver = true;
         }
     }
 }

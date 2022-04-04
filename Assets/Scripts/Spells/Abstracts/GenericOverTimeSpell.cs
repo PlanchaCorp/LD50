@@ -33,10 +33,12 @@ namespace PlanchaCorp.LD50.Scripts.Spells
         {
             this.alliesInRange.ForEach(delegate (GameObject gameObject)
             {
-                AllyLifeManager allyLifeManager = gameObject.GetComponent<AllyLifeManager>();
-                if (allyLifeManager != null)
-                {
-                    allyLifeManager.Heal((float)clockTickEvent.Get() * spell.HealAmount);
+                if(gameObject != null){
+                    AllyLifeManager allyLifeManager = gameObject.GetComponent<AllyLifeManager>();
+                    if (allyLifeManager != null)
+                    {
+                        allyLifeManager.Heal((float)clockTickEvent.Get() * spell.HealAmount);
+                    }
                 }
             });
         }

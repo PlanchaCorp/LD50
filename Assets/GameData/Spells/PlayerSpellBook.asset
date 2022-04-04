@@ -16,9 +16,9 @@ MonoBehaviour:
   - {fileID: 7941984446237351741, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
   postUpgradeEvent: {fileID: 11400000, guid: e7d9bf6742774094a9e62d8af2e2e40e, type: 2}
   DefaultAuraSpellLevel: 1
-  DefaultSpikeSpellLevel: 1
-  DefaultSplashSpellLevel: 1
-  DefaultRaySpellLevel: 1
+  DefaultSpikeSpellLevel: 0
+  DefaultSplashSpellLevel: 0
+  DefaultRaySpellLevel: 0
   AuraSpellTypeArray: {fileID: 11400000, guid: de786beaaf5b4a859b104198f14f3c69, type: 2}
   SpikeSpellTypeArray: {fileID: 11400000, guid: aad54d03edd9c5503ab73820ed378702, type: 2}
   SplashSpellTypeArray: {fileID: 11400000, guid: e3b1efc51b8ca509db84eac76465be4b, type: 2}

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba53bc87dcd40e7c3b88f0738b2f0dd1, type: 3}
   m_Name: worldSpawnSetting
   m_EditorClassIdentifier: 
-  minRange: 20
-  maxRange: 30
+  minRange: 18
+  maxRange: 16
   spawnRate: 5
+  spawnRateEvolution: -0.03
+  spawnRateMin: 2
