@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56cf458f6860205c0baed3528977d2fa, type: 3}
-  m_Name: Aura1 5
+  m_Script: {fileID: 11500000, guid: 2db84c3f1f77c06e5a8df891d102aeb8, type: 3}
+  m_Name: Spike1 8
   m_EditorClassIdentifier: 
-  Level: 6
-  Prefab: {fileID: 7941984446237351741, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
-  Range: 3
-  HealAmount: 3
-  Cooldown: 0
+  Level: 9
+  Prefab: {fileID: 7941984446237351741, guid: 41c04b813007e8a7aa8a58d7ce78d05c, type: 3}
+  Range: 1
+  HealAmount: 6
+  Cooldown: 6
+  Angle: 38
