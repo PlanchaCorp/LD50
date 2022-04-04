@@ -29,7 +29,7 @@ namespace PlanchaCorp.LD50.Scripts {
 
         IEnumerator fadeText(){
         var color = this.text.color;
-            for (float alpha = 1f; alpha >= 0; alpha -= 0.1f)
+            for (float alpha = 1f; alpha >= 0; alpha -= 0.25f)
             {
             color = this.text.color;
             color.a = alpha;
