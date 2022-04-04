@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level: 1
   Prefab: {fileID: 7941984446237351741, guid: fb7f7fe7f94ebd6abbb523cc340f6ce5, type: 3}
-  Range: 10
+  Range: 18
   HealAmount: 4
-  Cooldown: 5
+  Cooldown: 1
   Radius: 2
   Duration: 3
-  ThrowSpeed: 10
+  ThrowSpeed: 20

@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fefb3cff671c44358a36a10f7e35862d, type: 3}
-  m_Name: RayMaxOpacity
+  m_Script: {fileID: 11500000, guid: 56cf458f6860205c0baed3528977d2fa, type: 3}
+  m_Name: Aura1 4
   m_EditorClassIdentifier: 
-  Value: 2
-  ResetValueOnStart: 0
-  DefaultValue: 0
+  Level: 5
+  Prefab: {fileID: 7941984446237351741, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
+  Range: 2
+  HealAmount: 5
+  Cooldown: 0
