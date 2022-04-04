@@ -13,4 +13,15 @@ MonoBehaviour:
   m_Name: RaySpellType
   m_EditorClassIdentifier: 
   spellVersions:
+  - {fileID: 11400000, guid: b5f20160f71f6ea418524310baa2a958, type: 2}
+  - {fileID: 11400000, guid: a825c2bcee58cb14791c86ec2228f0a7, type: 2}
+  - {fileID: 11400000, guid: be9fe958160bf0f49be6f3fcada47483, type: 2}
+  - {fileID: 11400000, guid: 5975f3665d246c7498d2435e5dbaf741, type: 2}
+  - {fileID: 11400000, guid: c88c8fb6797070540b7ec4b84561bbd6, type: 2}
+  - {fileID: 11400000, guid: 3235e7f82f85d584195206646ec25205, type: 2}
+  - {fileID: 11400000, guid: b913e29fa6284f045874bd5775f8e237, type: 2}
+  - {fileID: 11400000, guid: 5bda46eca364d8d49b9cb45738fdc1e1, type: 2}
+  - {fileID: 11400000, guid: c90c6d9222f3b054296a41bb4f21c223, type: 2}
+  - {fileID: 11400000, guid: cb2c72e7986da6e49baed27f21245ea9, type: 2}
+  - {fileID: 11400000, guid: 1922c1f2af73f2949a25ef9822867d01, type: 2}
   - {fileID: 11400000, guid: 09eed3be0607c70f69d4b778aab4c274, type: 2}
