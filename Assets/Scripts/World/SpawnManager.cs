@@ -24,7 +24,11 @@ public class SpawnManager : MonoBehaviour
                 tickSum = 0;
                 Vector2 pos = Random.insideUnitCircle.normalized * Random.Range(spawnSetting.minRange,spawnSetting.maxRange);
                 Instantiate(ally,playerPosition.Value + pos,Quaternion.identity);
+                updateRate();
             }
+        }
+        private void updateRate(){
+            spawnSetting.spawnRate = spawnSetting.spawnRate + spawnSetting.spawnRateEvolution;
         }
     }
 }
