@@ -16,7 +16,8 @@ GameObject:
   - component: {fileID: 3401588654400433339}
   - component: {fileID: 653216075230635140}
   - component: {fileID: 175907408}
-  - component: {fileID: 175907409}
+  - component: {fileID: 1991870286}
+  - component: {fileID: 1991870294}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -104,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {fileID: 11400000, guid: 82c52a45e3ad07b0891016e2e582e521, type: 2}
   position: {fileID: 11400000, guid: 2661059668d73e46e843f3ac2634a0f4, type: 2}
+  preUpgradeEvent: {fileID: 11400000, guid: e69ed6f9d7fd5fb5fb24198fd72c2781, type: 2}
 --- !u!114 &6444778620716332214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +223,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &175907409
+--- !u!114 &1991870286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4450369992917332793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec31ebeb221abc73ad449102fee72d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventPublisher: {fileID: 11400000, guid: e7d9bf6742774094a9e62d8af2e2e40e, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6444778620716332214}
+        m_TargetAssemblyTypeName: PlanchaCorp.LD50.Scripts.Player.ExperienceSystem,
+          Assembly-CSharp
+        m_MethodName: OnSpellUpgraded
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1991870294
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,6 +291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8344495584796127883}
   - component: {fileID: 7689842483935539283}
+  - component: {fileID: 634850735}
   m_Layer: 0
   m_Name: Gremory
   m_TagString: Untagged
@@ -294,3 +326,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellBook: {fileID: 11400000, guid: e623824f031be7cabb13ee107e42bd9e, type: 2}
+  castSpellEvent: {fileID: 11400000, guid: dab5e1e4c3fbc84f0b983b5d78ebc240, type: 2}
+  equipSpellEvent: {fileID: 11400000, guid: 83dc9e375f15ef9ae9b0fc851b5a94de, type: 2}
+  skillPoint: {fileID: 11400000, guid: ba6b805c4d0c9a9019b070dcb0fc5dfb, type: 2}
+--- !u!114 &634850735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5241969494941409858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec31ebeb221abc73ad449102fee72d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventPublisher: {fileID: 11400000, guid: e69ed6f9d7fd5fb5fb24198fd72c2781, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7689842483935539283}
+        m_TargetAssemblyTypeName: PlanchaCorp.LD50.Scripts.Player.SpellCaster, Assembly-CSharp
+        m_MethodName: onPreSpellUpgrade
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
