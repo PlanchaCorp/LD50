@@ -123,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxXpPerLevel: {fileID: 11400000, guid: 58e8b11c2db88cc50b1078b50c09b6ee, type: 2}
   xpRequiredScaling: {fileID: 11400000, guid: 8178578f05a3233bdb40faab2aed99b6, type: 2}
+  TotalXp: {fileID: 11400000, guid: f0249671782f08a7784ddbe432f739cc, type: 2}
   AvailableSkillPoints: {fileID: 11400000, guid: ba6b805c4d0c9a9019b070dcb0fc5dfb, type: 2}
   experienceAmount: {fileID: 11400000, guid: b09cf5acadcafb56786e467b76e6234d, type: 2}
   levelAmount: {fileID: 11400000, guid: 784ac0cd2568fdec8aadea3adb3d0bab, type: 2}
