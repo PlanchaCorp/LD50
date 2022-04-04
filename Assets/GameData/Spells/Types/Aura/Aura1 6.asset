@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cf458f6860205c0baed3528977d2fa, type: 3}
   m_Name: Aura1 6
   m_EditorClassIdentifier: 
-  Level: 7
+  Level: 6
   Prefab: {fileID: 7941984446237351741, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
-  Range: 2.5
+  Range: 2
   HealAmount: 8
   Cooldown: 0

@@ -15,5 +15,5 @@ MonoBehaviour:
   minRange: 18
   maxRange: 16
   spawnRate: {fileID: 11400000, guid: c364ba50371bc01a3a36c881fb5c84c7, type: 2}
-  spawnRateEvolution: -0.05
-  spawnRateMin: 2
+  spawnRateEvolution: -0.75
+  spawnRateMin: 1.5

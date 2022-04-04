@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db84c3f1f77c06e5a8df891d102aeb8, type: 3}
   m_Name: Spike1 6
   m_EditorClassIdentifier: 
-  Level: 7
+  Level: 6
   Prefab: {fileID: 7941984446237351741, guid: 41c04b813007e8a7aa8a58d7ce78d05c, type: 3}
-  Range: 3
-  HealAmount: 3
-  Cooldown: 3
+  Range: 1.5
+  HealAmount: 8
+  Cooldown: 1
   Angle: 45

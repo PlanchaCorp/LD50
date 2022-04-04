@@ -15,7 +15,7 @@ MonoBehaviour:
   Level: 3
   Prefab: {fileID: 7941984446237351741, guid: fb7f7fe7f94ebd6abbb523cc340f6ce5, type: 3}
   Range: 18
-  HealAmount: 1
+  HealAmount: 3
   Cooldown: 4
   Radius: 3
   Duration: 5
