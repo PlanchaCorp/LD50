@@ -56,6 +56,7 @@ namespace PlanchaCorp.LD50.Scripts
                 xpGain = maxHealth.Value - this.currentHealth;
             }
             this.currentHealth = newHealth;
+            this.healthBar.showHeal(Mathf.CeilToInt(healingAmount));
             expEmit.Raise(new GameEvent(xpGain));
         }
 
