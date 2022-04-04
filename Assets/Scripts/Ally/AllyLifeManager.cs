@@ -34,12 +34,14 @@ namespace PlanchaCorp.LD50.Scripts
             this.currentHealth = this.currentHealth - damage;
         }
         public void Heal(float healingAmount) {
-            this.currentHealth = this.currentHealth + healingAmount;
-            if (this.currentHealth > maxHealth.Value) {
-                healingAmount = this.currentHealth - maxHealth.Value;
-                this.currentHealth = maxHealth.Value;
+            float newHealth = this.currentHealth + healingAmount;
+            float xpGain = healingAmount;
+            if (newHealth > maxHealth.Value) {
+                newHealth = maxHealth.Value;
+                xpGain = maxHealth.Value - this.currentHealth;
             }
-            expEmit.Raise(new GameEvent(Mathf.FloorToInt(healingAmount)));
+            this.currentHealth = newHealth;
+            expEmit.Raise(new GameEvent(xpGain));
         }
         public void Die(){
             GameEvent deathEvent = new GameEvent(this);

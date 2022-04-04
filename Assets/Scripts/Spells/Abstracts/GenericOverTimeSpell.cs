@@ -22,9 +22,7 @@ namespace PlanchaCorp.LD50.Scripts.Spells
             base.Cast(spellType);
             List<Collider2D> colliders = new List<Collider2D>();
             Physics2D.OverlapCollider(collider2d, contact, colliders);
-                Debug.Log("Searching...");
             foreach (Collider2D collider in colliders) {
-                Debug.Log("Found 1!");
                 if (collider.CompareTag("Ally")) {
                     this.alliesInRange.Add(collider.gameObject);
                 }
