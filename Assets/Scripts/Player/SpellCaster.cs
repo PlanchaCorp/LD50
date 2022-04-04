@@ -26,6 +26,7 @@ namespace PlanchaCorp.LD50.Scripts.Player
         private float rayCooldown = 0;
         private float splashCooldown = 0;
 
+
         private void Start() {
             CastAuraSpell();
         }

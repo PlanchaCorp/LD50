@@ -7,10 +7,15 @@ namespace PlanchaCorp.LD50.Scripts.Spells
 {
     public class GenericOverTimeSpell : GenericSpell
     {
+        protected AbstractSpellType spellType;
+        public void recast(AbstractSpellType spellType){
+            this.spellType = spellType;
+        }
         private ContactFilter2D contact;
         public new void Cast(AbstractSpellType spellType)
         {
             base.Cast(spellType);
+            this.spellType = spellType;
             List<Collider2D> colliders = new List<Collider2D>();
             Physics2D.OverlapCollider(collider2d, contact, colliders);
             foreach (Collider2D collider in colliders) {
