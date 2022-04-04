@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fefb3cff671c44358a36a10f7e35862d, type: 3}
   m_Name: TickDelay
   m_EditorClassIdentifier: 
-  Value: 0
+  Value: 0.3
   ResetValueOnStart: 1
   DefaultValue: 0.3
