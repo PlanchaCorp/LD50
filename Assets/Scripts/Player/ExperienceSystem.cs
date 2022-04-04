@@ -11,6 +11,8 @@ namespace PlanchaCorp.LD50.Scripts.Player
         private IntVariable maxXpPerLevel;
         [SerializeField]
         private FloatVariable xpRequiredScaling;
+        [SerializeField]
+        private FloatVariable TotalXp;
 
         [SerializeField]
         public IntVariable AvailableSkillPoints;
@@ -29,6 +31,7 @@ namespace PlanchaCorp.LD50.Scripts.Player
         }
 
         public void GainExperience(GameEvent gainExperienceEvent) {
+            TotalXp.Value += (float)gainExperienceEvent.Get();
             experienceAmount.Value = experienceAmount.Value + (float)gainExperienceEvent.Get();
             if(experienceAmount.Value>=maxXpPerLevel.Value) {
                 levelUpEvent.Raise(new GameEvent());
