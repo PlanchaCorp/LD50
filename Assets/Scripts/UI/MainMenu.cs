@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -35,5 +36,13 @@ public class MainMenu : MonoBehaviour
         HomeContainer.enabled = true;
         HowToPlayContainer.enabled = false;
         CreditsCanvas.enabled = false;
+    }
+    public void StartGame() {
+        StartCoroutine(StartGame(1.1f));
+    }
+
+    private IEnumerator StartGame(float delay) {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("SampleScene");
     }
 }
