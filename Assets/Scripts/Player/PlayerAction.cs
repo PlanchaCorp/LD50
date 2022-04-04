@@ -13,6 +13,10 @@ namespace PlanchaCorp.LD50.Scripts.Player {
         private Vector2Variable position;
         [SerializeField]
         private GameEventPublisher preUpgradeEvent;
+        [SerializeField]
+        private GameEventPublisher selectEvent;
+        [SerializeField]
+        private GameEventPublisher preCastEvent;
         private Rigidbody2D rb;
         private Vector2 direction = Vector2.zero;
         private SpellCaster spellCaster;
@@ -30,40 +34,67 @@ namespace PlanchaCorp.LD50.Scripts.Player {
         }
 
         // Input callbacks
-        public void OnSkill1()
+        public void OnSkill1(InputValue input)
         {
             // Do nothing, because this is the passive action run from the start
+            var front =input.Get<float>();
+            Debug.Log(front);
+            if(front >= .5f){
+               Debug.Log("select");
+            }
+            if(front < .5f){
+                Debug.Log("cast");
+            }
         }
         public void OnSkill1Upgrade() {
             preUpgradeEvent.Raise(new GameEvent(AURA));
         }
-        public void OnSkill2()
+        public void OnSkill2(InputValue input)
         {
-            spellCaster.EquipSpikeSpell();
+            var front =input.Get<float>();
+            if(front >= .5f){
+                selectEvent.Raise(new GameEvent(SPIKE));
+            }
+            if(front < .5f){
+                preCastEvent.Raise(new GameEvent());
+            }
         }
         public void OnSkill2Upgrade()
         {
             preUpgradeEvent.Raise(new GameEvent(SPIKE));
         }
-        public void OnSkill3()
+        public void OnSkill3(InputValue input)
         {
-            spellCaster.EquipRaySpell();
+            var front =input.Get<float>();
+            if(front >= .5f){
+                selectEvent.Raise(new GameEvent(RAY));
+            }
+            if(front < .5f){
+                preCastEvent.Raise(new GameEvent());
+            }
         }
         public void OnSkill3Upgrade()
         {
             preUpgradeEvent.Raise(new GameEvent(RAY));
         }
-        public void OnSkill4()
+        public void OnSkill4(InputValue input)
         {
-            spellCaster.EquipSplashSpell();
+            var front =input.Get<float>();
+            if(front >= .5f){
+                selectEvent.Raise(new GameEvent(SPLASH));
+            }
+            if(front < .5f){
+                preCastEvent.Raise(new GameEvent());
+            }
         }
         public void OnSkill4Upgrade()
         {
             preUpgradeEvent.Raise(new GameEvent(SPLASH));
         }
+
         public void OnFire() 
         {
-            spellCaster.CastSpell();
+            preCastEvent.Raise(new GameEvent());
         }
     }
 }

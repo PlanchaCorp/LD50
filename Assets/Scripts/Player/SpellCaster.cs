@@ -37,29 +37,25 @@ namespace PlanchaCorp.LD50.Scripts.Player
         public void EquipSpikeSpell()
         {
             SpikeSpellType spikeSpell = spellBook.EquippedSpikeSpell;
-            if (spikeSpell != null)
+            if (spikeSpell != null && spikeCooldown == 0)
             {
                 EquippedSpell = spikeSpell;
-                equipSpellEvent.Raise(new GameEvent(SPIKE));
             }
         }
         public void EquipSplashSpell()
         {
             SplashSpellType splashSpell = spellBook.EquippedSplashSpell;
-            if (splashSpell != null)
+            if (splashSpell != null && splashCooldown == 0)
             {
                 EquippedSpell = splashSpell;
-                equipSpellEvent.Raise(new GameEvent(SPLASH));
-
             }
         }
         public void EquipRaySpell()
         {
             RaySpellType raySpell = spellBook.EquippedRaySpell;
-            if (raySpell != null)
+            if (raySpell != null && rayCooldown == 0)
             {
-                EquippedSpell = raySpell;
-                equipSpellEvent.Raise(new GameEvent(RAY));                
+                EquippedSpell = raySpell;           
             }
         }
 
@@ -87,6 +83,7 @@ namespace PlanchaCorp.LD50.Scripts.Player
                 spellCasted.GetComponent<SpikeSpell>().Cast((SpikeSpellType)EquippedSpell, mousePosition);
                 spikeCooldown = EquippedSpell.Cooldown;
                 castSpellEvent.Raise(new GameEvent(EquippedSpell));
+                EquippedSpell =null;
 
             } else if (EquippedSpell.GetType() == typeof(RaySpellType))
             {
@@ -100,6 +97,7 @@ namespace PlanchaCorp.LD50.Scripts.Player
                 spellCasted.GetComponent<RaySpell>().Cast((RaySpellType)EquippedSpell, mousePosition);
                 rayCooldown = EquippedSpell.Cooldown;
                 castSpellEvent.Raise(new GameEvent(EquippedSpell));
+                EquippedSpell =null;
             }
             else if (EquippedSpell.GetType() == typeof(SplashSpellType))
             {
@@ -113,6 +111,7 @@ namespace PlanchaCorp.LD50.Scripts.Player
                 spellCasted.GetComponent<SplashSpellThrow>().Cast((SplashSpellType)EquippedSpell, mousePosition);
                 splashCooldown = EquippedSpell.Cooldown;
                 castSpellEvent.Raise(new GameEvent(EquippedSpell));
+                EquippedSpell =null;
             }
         }
 
@@ -134,6 +133,34 @@ namespace PlanchaCorp.LD50.Scripts.Player
                         break;    
                 }
             }
+        }
+        public void onSpellSelection(GameEvent gameEvent){
+            var spell =(SpellNumbers) gameEvent.Get();
+                switch(spell){
+                    case SPIKE:
+                        EquipSpikeSpell();
+                        break;
+                    case RAY:
+                        EquipRaySpell();
+                        break;
+                    case SPLASH :
+                        EquipSplashSpell();
+                        break;    
+                }
+        }
+        public void onSpellCast(GameEvent gameEvent){
+            var spell =(SpellNumbers) gameEvent.Get();
+                switch(spell){
+                    case SPIKE:
+                        CastSpell();
+                        break;
+                    case RAY:
+                        EquipRaySpell();
+                        break;
+                    case SPLASH :
+                        EquipSplashSpell();
+                        break;    
+                }
         }
     }
 }

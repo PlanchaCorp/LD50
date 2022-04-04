@@ -14,36 +14,21 @@ public class SpellsManager : MonoBehaviour
     [SerializeField]
     private GameEventPublisher preUpgradeEvent;
     [SerializeField]
+    private GameEventPublisher SelectedEvent;
+    [SerializeField]
     private List<SkillUIManager> skills;
     [SerializeField]
     private List<UpgradeButton> skillsUpgrade;
     [SerializeField]
     private GameObject upgradePanel;
+    void Start(){
+        OnSkillUpdated();
+    }
     void Update(){
         if(skillPoint.Value>0) {
             DisplayUpgrades();
         } else {
             HidesUpgrades();
-        }
-        if(spellBook.EquippedAuraSpell is null){
-            skills[0].setNotClickable();
-        } else {
-            skills[0].setClickable();
-        }
-        if(spellBook.EquippedRaySpell is null){
-            skills[2].setNotClickable();
-        } else {
-            skills[2].setClickable();
-        }
-        if(spellBook.EquippedSpikeSpell?.Level is null){
-            skills[1].setNotClickable();
-        } else {
-            skills[1].setClickable();
-        }
-        if(spellBook.EquippedSplashSpell?.Level is null){
-            skills[3].setNotClickable();
-        } else {
-            skills[3].setClickable();
         }
     }
 
@@ -101,6 +86,28 @@ public class SpellsManager : MonoBehaviour
                 break;
         }
     }
+    public void OnSkillUpdated(){
+        if(spellBook.EquippedAuraSpell is null){
+            skills[0].setNotClickable();
+        } else {
+            skills[0].setClickable();
+        }
+        if(spellBook.EquippedRaySpell is null){
+            skills[2].setNotClickable();
+        } else {
+            skills[2].setClickable();
+        }
+        if(spellBook.EquippedSpikeSpell?.Level is null){
+            skills[1].setNotClickable();
+        } else {
+            skills[1].setClickable();
+        }
+        if(spellBook.EquippedSplashSpell?.Level is null){
+            skills[3].setNotClickable();
+        } else {
+            skills[3].setClickable();
+        }
+    }
     public void UpgradeAura(){
         preUpgradeEvent.Raise(new GameEvent(AURA));
     }
@@ -114,5 +121,17 @@ public class SpellsManager : MonoBehaviour
         preUpgradeEvent.Raise(new GameEvent(SPLASH));
         
     }
+        public void OnSkill2()
+        {
+            SelectedEvent.Raise(new GameEvent(SPIKE));
+        }
+        public void OnSkill3()
+        {
+            SelectedEvent.Raise(new GameEvent(RAY));
+        }
+        public void OnSkill4()
+        {
+            SelectedEvent.Raise(new GameEvent(SPLASH));
+        }
 
 }

@@ -31,13 +31,16 @@ public class SkillUIManager : MonoBehaviour
         StartCoroutine("coolDownProgress",delay);
     }
     public void Equip(){
-        selectionMask.enabled = true;
+        if(spellButton.interactable){
+            selectionMask.enabled = true;
+        }
     }
     public void UnEquip(){
         selectionMask.enabled = false;
     }
     public void OnSpellCasted(GameEvent gameEvent){
         AbstractSpellType spellType = gameEvent.Get<AbstractSpellType>();
+        spellButton.interactable = false;
         this.coolDown(spellType.Cooldown);
     }
     public void setNotClickable() {
