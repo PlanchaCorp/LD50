@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level: 5
   Prefab: {fileID: 7941984446237351741, guid: 41c04b813007e8a7aa8a58d7ce78d05c, type: 3}
-  Range: 1
-  HealAmount: 4
-  Cooldown: 8
-  Angle: 34
+  Range: 2
+  HealAmount: 3
+  Cooldown: 6
+  Angle: 45
