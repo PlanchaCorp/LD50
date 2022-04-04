@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: worldSpawnSetting
   m_EditorClassIdentifier: 
   minRange: 18
-  maxRange: 18
-  spawnRate: 4.0099983
+  maxRange: 16
+  spawnRate: 4.91
   spawnRateEvolution: -0.09
