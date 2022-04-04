@@ -12,6 +12,8 @@ public class MainMenu : MonoBehaviour
     private Canvas HowToPlayContainer;
     [SerializeField]
     private Canvas CreditsCanvas;
+    [SerializeField]
+    private CanvasGroup CanvasGroup;
 
     public void Start() {
         HomeContainer.enabled = true;
@@ -38,6 +40,7 @@ public class MainMenu : MonoBehaviour
         CreditsCanvas.enabled = false;
     }
     public void StartGame() {
+        CanvasGroup.interactable = false;
         StartCoroutine(StartGame(1.1f));
     }
 
