@@ -21,14 +21,25 @@ namespace PlanchaCorp.LD50.Scripts.Player {
         private Vector2 direction = Vector2.zero;
         private SpellCaster spellCaster;
         private AudioSource footstepSound;
+        private SpriteRenderer renderer;
+        private Animator animator;
 
         public void Start(){
             rb = GetComponent<Rigidbody2D>();
             spellCaster = GetComponentInChildren<SpellCaster>();
             footstepSound = GetComponent<AudioSource>();
+            renderer = GetComponent<SpriteRenderer>();
+            animator = GetComponent<Animator>();
         }
         public void OnMove (InputValue input){
             this.direction = input.Get<Vector2>().normalized;
+            animator.SetFloat("speed",this.direction.magnitude);
+            Debug.Log(direction.x);
+            if(direction.x>0){
+                renderer.flipX =false;
+            } else if(direction.x<0) {
+                renderer.flipX =true;
+            }
             if (footstepSound != null) {
                 footstepSound.volume = direction != Vector2.zero ? 1 : 0;
             }
@@ -42,14 +53,6 @@ namespace PlanchaCorp.LD50.Scripts.Player {
         public void OnSkill1(InputValue input)
         {
             // Do nothing, because this is the passive action run from the start
-            var front =input.Get<float>();
-            Debug.Log(front);
-            if(front >= .5f){
-               Debug.Log("select");
-            }
-            if(front < .5f){
-                Debug.Log("cast");
-            }
         }
         public void OnSkill1Upgrade() {
             preUpgradeEvent.Raise(new GameEvent(AURA));
