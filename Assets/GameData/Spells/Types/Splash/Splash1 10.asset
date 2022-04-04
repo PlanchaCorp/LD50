@@ -16,7 +16,7 @@ MonoBehaviour:
   Prefab: {fileID: 7941984446237351741, guid: fb7f7fe7f94ebd6abbb523cc340f6ce5, type: 3}
   Range: 18
   HealAmount: 4
-  Cooldown: 6
+  Cooldown: 2
   Radius: 3
   Duration: 7
   ThrowSpeed: 20

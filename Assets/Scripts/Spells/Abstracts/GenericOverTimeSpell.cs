@@ -7,15 +7,6 @@ namespace PlanchaCorp.LD50.Scripts.Spells
 {
     public class GenericOverTimeSpell : GenericSpell
     {
-
-        [SerializeField]
-        private FloatVariable opacity;
-
-        private void Start()
-        {
-            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, opacity.Value);
-        }
-
         private ContactFilter2D contact;
         public new void Cast(AbstractSpellType spellType)
         {

@@ -15,5 +15,5 @@ MonoBehaviour:
   minRange: 18
   maxRange: 16
   spawnRate: 5
-  spawnRateEvolution: -0.03
+  spawnRateEvolution: -0.05
   spawnRateMin: 2
