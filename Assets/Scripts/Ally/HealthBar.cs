@@ -28,13 +28,17 @@ namespace PlanchaCorp.LD50.Scripts {
         }
 
         IEnumerator fadeText(){
+        var color = this.text.color;
             for (float alpha = 1f; alpha >= 0; alpha -= 0.1f)
             {
-            var color = this.text.color;
+            color = this.text.color;
             color.a = alpha;
             this.text.color = color;
             yield return new WaitForSeconds(.1f);
         }
+        color = this.text.color;
+            color.a = 0;
+            this.text.color = color;
         }
     }
 }
