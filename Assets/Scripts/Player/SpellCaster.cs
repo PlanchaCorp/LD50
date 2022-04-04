@@ -119,7 +119,6 @@ namespace PlanchaCorp.LD50.Scripts.Player
         public void onPreSpellUpgrade(GameEvent gameEvent){
             if(skillPoint.Value>0){
                 var spell =(SpellNumbers) gameEvent.Get();
-                Debug.Log("upgrade"+ spell);
                 switch(spell){
                     case AURA:
                         spellBook.UpgradeAura();

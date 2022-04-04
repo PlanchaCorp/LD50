@@ -57,7 +57,6 @@ public class SpellsManager : MonoBehaviour
 
     public void OnSpellCasted(GameEvent gameEvent){
         var spell = gameEvent.Get();
-        Debug.Log("cast"+ spell.GetType().ToString());
         if(spell.GetType()==typeof(SplashSpellType)){
             skills[3].coolDown(((SplashSpellType)spell).Cooldown);
         }
@@ -73,7 +72,6 @@ public class SpellsManager : MonoBehaviour
         skills.ForEach(delegate(SkillUIManager skillUIManager){
             skillUIManager.UnEquip();
         });
-        Debug.Log(spell);
         switch(spell){
             case SPIKE:
                 skills[1].Equip();
