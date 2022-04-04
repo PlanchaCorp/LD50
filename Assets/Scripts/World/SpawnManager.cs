@@ -22,7 +22,7 @@ public class SpawnManager : MonoBehaviour
         public void OnTick(GameEvent gameEvent){
             var tickDelay = (float) gameEvent.Get();
             tickSum += tickDelay;
-            if(tickSum >= spawnSetting.spawnRate){
+            if(tickSum >= spawnSetting.spawnRate.Value){
                 tickSum = 0;
                 Vector2 pos = Random.insideUnitCircle.normalized * Random.Range(spawnSetting.minRange,spawnSetting.maxRange);
                 Instantiate(ally,playerPosition.Value + pos,Quaternion.identity);
@@ -31,7 +31,7 @@ public class SpawnManager : MonoBehaviour
             }
         }
         private void updateRate(){
-            spawnSetting.spawnRate = Mathf.Max(spawnSetting.spawnRate + spawnSetting.spawnRateEvolution, spawnSetting.spawnRateMin);
+            spawnSetting.spawnRate.Value = Mathf.Max(spawnSetting.spawnRate.Value + spawnSetting.spawnRateEvolution, spawnSetting.spawnRateMin);
         }
     }
 }

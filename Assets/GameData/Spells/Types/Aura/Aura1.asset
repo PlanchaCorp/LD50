@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level: 1
   Prefab: {fileID: 7941984446237351741, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
-  Range: 2
-  HealAmount: 1
+  Range: 4
+  HealAmount: 20
   Cooldown: 0

@@ -10,7 +10,7 @@ namespace PlanchaCorp.LD50.ScriptableObjects {
         public float minRange;
         public float maxRange;
 
-        public float spawnRate;
+        public FloatVariable spawnRate;
         public float spawnRateEvolution;
         public float spawnRateMin;
     }
