@@ -18,6 +18,8 @@ namespace PlanchaCorp.LD50.Scripts.Player
         [SerializeField]
         private GameEventPublisher equipSpellEvent;
         [SerializeField]
+        private GameEventPublisher unavailableActionEvent;
+        [SerializeField]
         private IntVariable skillPoint;
         private AbstractSpellType EquippedSpell;
         private float spikeCooldown = 0;
@@ -78,7 +80,7 @@ namespace PlanchaCorp.LD50.Scripts.Player
                     return;
                 }
                 GameObject spellPrefab = EquippedSpell.Prefab;
-                GameObject spellCasted = Instantiate(spellPrefab, this.transform);
+                GameObject spellCasted = Instantiate(spellPrefab, transform.position, transform.rotation);
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
                 spellCasted.GetComponent<SpikeSpell>().Cast((SpikeSpellType)EquippedSpell, mousePosition);
                 spikeCooldown = EquippedSpell.Cooldown;
@@ -92,7 +94,7 @@ namespace PlanchaCorp.LD50.Scripts.Player
                     return;
                 }
                 GameObject spellPrefab = EquippedSpell.Prefab;
-                GameObject spellCasted = Instantiate(spellPrefab, this.transform);
+                GameObject spellCasted = Instantiate(spellPrefab, transform.position, transform.rotation);
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
                 spellCasted.GetComponent<RaySpell>().Cast((RaySpellType)EquippedSpell, mousePosition);
                 rayCooldown = EquippedSpell.Cooldown;
@@ -121,18 +123,19 @@ namespace PlanchaCorp.LD50.Scripts.Player
                 switch(spell){
                     case AURA:
                         spellBook.UpgradeAura();
-                        break;
+                        return;
                     case SPIKE:
                         spellBook.UpgradeSpike();
-                        break;
+                        return;
                     case RAY:
                         spellBook.UpgradeRay();
-                        break;
+                        return;
                     case SPLASH :
                         spellBook.UpgradeSplash();
-                        break;    
+                        return;
                 }
             }
+            unavailableActionEvent.Raise(new GameEvent(this));
         }
         public void onSpellSelection(GameEvent gameEvent){
             var spell =(SpellNumbers) gameEvent.Get();

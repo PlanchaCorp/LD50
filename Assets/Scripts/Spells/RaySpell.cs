@@ -7,8 +7,14 @@ namespace PlanchaCorp.LD50.Scripts.Spells
 {
     public class RaySpell : GenericInstantSpell
     {
+        [SerializeField]
+        private AudioSource raySound;
+
         public void Cast(RaySpellType raySpell, Vector2 castPosition)
         {
+            if (raySound != null) {
+                raySound.Play();
+            }
             base.Cast(raySpell);
             // Setting the width
             transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y * raySpell.Width);

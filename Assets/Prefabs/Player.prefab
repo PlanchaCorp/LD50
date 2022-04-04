@@ -120,10 +120,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b006a10fd0728255a0d4e0b67d1fc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  experienceAmount: {fileID: 11400000, guid: 96aba858c1b423df38c7ec621cbe74e5, type: 2}
-  levelAmount: {fileID: 11400000, guid: 784ac0cd2568fdec8aadea3adb3d0bab, type: 2}
   maxXpPerLevel: {fileID: 11400000, guid: 58e8b11c2db88cc50b1078b50c09b6ee, type: 2}
+  xpRequiredScaling: {fileID: 11400000, guid: 8178578f05a3233bdb40faab2aed99b6, type: 2}
   AvailableSkillPoints: {fileID: 11400000, guid: ba6b805c4d0c9a9019b070dcb0fc5dfb, type: 2}
+  experienceAmount: {fileID: 11400000, guid: b09cf5acadcafb56786e467b76e6234d, type: 2}
+  levelAmount: {fileID: 11400000, guid: 784ac0cd2568fdec8aadea3adb3d0bab, type: 2}
   expRender: {fileID: 11400000, guid: 22527ff705e5b1f509097b9d228105c9, type: 2}
   levelUpEvent: {fileID: 11400000, guid: a9cb1398e601c735ebc897ff5b91ff4e, type: 2}
 --- !u!95 &3401588654400433339
@@ -332,6 +333,7 @@ MonoBehaviour:
   spellBook: {fileID: 11400000, guid: e623824f031be7cabb13ee107e42bd9e, type: 2}
   castSpellEvent: {fileID: 11400000, guid: dab5e1e4c3fbc84f0b983b5d78ebc240, type: 2}
   equipSpellEvent: {fileID: 11400000, guid: 83dc9e375f15ef9ae9b0fc851b5a94de, type: 2}
+  unavailableActionEvent: {fileID: 11400000, guid: 95a9a8f55cc6e1edcb62146508ee3e2a, type: 2}
   skillPoint: {fileID: 11400000, guid: ba6b805c4d0c9a9019b070dcb0fc5dfb, type: 2}
 --- !u!114 &634850735
 MonoBehaviour:

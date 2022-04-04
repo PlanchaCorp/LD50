@@ -16,9 +16,17 @@ namespace PlanchaCorp.LD50.Scripts.Spells
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, opacity.Value);
         }
 
-        public void Cast(AbstractSpellType spellType, Vector2 castPosition)
+        private ContactFilter2D contact;
+        public new void Cast(AbstractSpellType spellType)
         {
             base.Cast(spellType);
+            List<Collider2D> colliders = new List<Collider2D>();
+            Physics2D.OverlapCollider(collider2d, contact, colliders);
+            foreach (Collider2D collider in colliders) {
+                if (collider.CompareTag("Ally")) {
+                    this.alliesInRange.Add(collider.gameObject);
+                }
+            }
         }
 
         public void HealAllies(GameEvent clockTickEvent)
@@ -31,6 +39,21 @@ namespace PlanchaCorp.LD50.Scripts.Spells
                     allyLifeManager.Heal((float)clockTickEvent.Get() * spell.HealAmount);
                 }
             });
+        }
+
+        public void OnTriggerEnter2D(Collider2D collider)
+        {
+            if ("Ally".Equals(collider.tag))
+            {
+                alliesInRange.Add(collider.gameObject);
+            }
+        }
+        public void OnTriggerExit2D(Collider2D collider)
+        {
+            if ("Ally".Equals(collider.tag))
+            {
+                this.alliesInRange.Remove(collider.gameObject);
+            }
         }
     }
 }
