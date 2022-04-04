@@ -11,6 +11,8 @@ public class SkillUIManager : MonoBehaviour
     [SerializeField]
     private Image selectionMask;
     [SerializeField]
+    private Image lockMask;
+    [SerializeField]
     private TMPro.TMP_Text timer;
 
     private Button spellButton;
@@ -22,7 +24,7 @@ public class SkillUIManager : MonoBehaviour
     }
     public void setClickable() {
         spellButton.interactable = true;
-        selectionMask.fillAmount = 0;
+        lockMask.enabled = false;
     }
     public void coolDown(float delay) {
         spellButton.interactable = false;
@@ -40,8 +42,7 @@ public class SkillUIManager : MonoBehaviour
     }
     public void setNotClickable() {
         spellButton.interactable = false;
-        selectionMask.fillAmount = 1;
-
+        lockMask.enabled = true;
     }
     IEnumerator coolDownProgress(float delay){
         for(float time = 0;time <= delay;time += .1f) {

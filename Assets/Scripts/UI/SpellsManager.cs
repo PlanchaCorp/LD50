@@ -20,16 +20,30 @@ public class SpellsManager : MonoBehaviour
     [SerializeField]
     private GameObject upgradePanel;
     void Update(){
-        if(skillPoint.Value>0){
+        if(skillPoint.Value>0) {
             DisplayUpgrades();
         } else {
             HidesUpgrades();
         }
-        if(spellBook.EquippedRaySpell?.Level ==0){
+        if(spellBook.EquippedAuraSpell is null){
+            skills[0].setNotClickable();
+        } else {
+            skills[0].setClickable();
+        }
+        if(spellBook.EquippedRaySpell is null){
             skills[2].setNotClickable();
         } else {
             skills[2].setClickable();
-
+        }
+        if(spellBook.EquippedSpikeSpell?.Level is null){
+            skills[1].setNotClickable();
+        } else {
+            skills[1].setClickable();
+        }
+        if(spellBook.EquippedSplashSpell?.Level is null){
+            skills[3].setNotClickable();
+        } else {
+            skills[3].setClickable();
         }
     }
 
@@ -59,12 +73,15 @@ public class SpellsManager : MonoBehaviour
         var spell = gameEvent.Get();
         if(spell.GetType()==typeof(SplashSpellType)){
             skills[3].coolDown(((SplashSpellType)spell).Cooldown);
+            skills[3].UnEquip();
         }
         if(spell.GetType()==typeof(RaySpellType)){
             skills[2].coolDown(((RaySpellType)spell).Cooldown);
+            skills[2].UnEquip();
         }
         if(spell.GetType()==typeof(SpikeSpellType)){
             skills[1].coolDown(((SpikeSpellType)spell).Cooldown);
+            skills[1].UnEquip();
         }
     }
     public void OnSpellSelected(GameEvent gameEvent){
