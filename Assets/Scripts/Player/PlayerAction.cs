@@ -34,7 +34,6 @@ namespace PlanchaCorp.LD50.Scripts.Player {
         public void OnMove (InputValue input){
             this.direction = input.Get<Vector2>().normalized;
             animator.SetFloat("speed",this.direction.magnitude);
-            Debug.Log(direction.x);
             if(direction.x>0){
                 renderer.flipX =false;
             } else if(direction.x<0) {
