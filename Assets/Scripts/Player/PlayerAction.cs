@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using PlanchaCorp.LD50.ScriptableObjects;
+using static PlanchaCorp.LD50.Scripts.Spells.SpellNumbers;
 
 namespace PlanchaCorp.LD50.Scripts.Player {
     [RequireComponent(typeof(Rigidbody2D))]
@@ -10,6 +11,8 @@ namespace PlanchaCorp.LD50.Scripts.Player {
         private FloatVariable speed;
         [SerializeField]
         private Vector2Variable position;
+        [SerializeField]
+        private GameEventPublisher preUpgradeEvent;
         private Rigidbody2D rb;
         private Vector2 direction = Vector2.zero;
         private SpellCaster spellCaster;
@@ -32,7 +35,7 @@ namespace PlanchaCorp.LD50.Scripts.Player {
             // Do nothing, because this is the passive action run from the start
         }
         public void OnSkill1Upgrade() {
-            spellCaster.UpgradeAura();
+            preUpgradeEvent.Raise(new GameEvent(AURA));
         }
         public void OnSkill2()
         {
@@ -40,23 +43,23 @@ namespace PlanchaCorp.LD50.Scripts.Player {
         }
         public void OnSkill2Upgrade()
         {
-            spellCaster.UpgradeSpike();
+            preUpgradeEvent.Raise(new GameEvent(SPIKE));
         }
         public void OnSkill3()
         {
-            spellCaster.EquipSplashSpell();
+            spellCaster.EquipRaySpell();
         }
         public void OnSkill3Upgrade()
         {
-            spellCaster.UpgradeSplash();
+            preUpgradeEvent.Raise(new GameEvent(RAY));
         }
         public void OnSkill4()
         {
-            spellCaster.EquipRaySpell();
+            spellCaster.EquipSplashSpell();
         }
         public void OnSkill4Upgrade()
         {
-            spellCaster.UpgradeRay();
+            preUpgradeEvent.Raise(new GameEvent(SPLASH));
         }
         public void OnFire() 
         {

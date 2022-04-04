@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class SkillUIManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject upgradeButton;
-    [SerializeField]
     private Image cooldownMask;
+    [SerializeField]
+    private Image selectionMask;
     [SerializeField]
     private TMPro.TMP_Text timer;
 
@@ -22,10 +22,17 @@ public class SkillUIManager : MonoBehaviour
     }
     public void setClickable() {
         spellButton.interactable = true;
+        selectionMask.fillAmount = 0;
     }
     public void coolDown(float delay) {
         spellButton.interactable = false;
         StartCoroutine("coolDownProgress",delay);
+    }
+    public void Equip(){
+        selectionMask.enabled = true;
+    }
+    public void UnEquip(){
+        selectionMask.enabled = false;
     }
     public void OnSpellCasted(GameEvent gameEvent){
         AbstractSpellType spellType = gameEvent.Get<AbstractSpellType>();
@@ -33,14 +40,9 @@ public class SkillUIManager : MonoBehaviour
     }
     public void setNotClickable() {
         spellButton.interactable = false;
-    }
+        selectionMask.fillAmount = 1;
 
-    public void DisplayUpgradeButton() {
-        upgradeButton.SetActive(true);
     }
-    public void HideUpgradeButton() {
-        upgradeButton.SetActive(false);
-    } 
     IEnumerator coolDownProgress(float delay){
         for(float time = 0;time <= delay;time += .1f) {
             cooldownMask.fillAmount = 1 - (time/delay);

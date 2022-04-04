@@ -4,6 +4,8 @@ using UnityEngine;
 using PlanchaCorp.LD50.ScriptableObjects;
 using PlanchaCorp.LD50.Scripts.Spells;
 using UnityEngine.InputSystem;
+using static PlanchaCorp.LD50.Scripts.Spells.SpellNumbers;
+
 
 namespace PlanchaCorp.LD50.Scripts.Player
 {
@@ -13,8 +15,14 @@ namespace PlanchaCorp.LD50.Scripts.Player
         private SpellBook spellBook;
         [SerializeField]
         private GameEventPublisher castSpellEvent;
-
+        [SerializeField]
+        private GameEventPublisher equipSpellEvent;
+        [SerializeField]
+        private IntVariable skillPoint;
         private AbstractSpellType EquippedSpell;
+        private float spikeCooldown = 0;
+        private float rayCooldown = 0;
+        private float splashCooldown = 0;
 
         private void Start() {
             CastAuraSpell();
@@ -32,22 +40,26 @@ namespace PlanchaCorp.LD50.Scripts.Player
             if (spikeSpell != null)
             {
                 EquippedSpell = spikeSpell;
+                equipSpellEvent.Raise(new GameEvent(SPIKE));
             }
         }
         public void EquipSplashSpell()
         {
-            SplashSpellType spikeSpell = spellBook.EquippedSplashSpell;
-            if (spikeSpell != null)
+            SplashSpellType splashSpell = spellBook.EquippedSplashSpell;
+            if (splashSpell != null)
             {
-                EquippedSpell = spikeSpell;
+                EquippedSpell = splashSpell;
+                equipSpellEvent.Raise(new GameEvent(SPLASH));
+
             }
         }
         public void EquipRaySpell()
         {
-            RaySpellType spikeSpell = spellBook.EquippedRaySpell;
-            if (spikeSpell != null)
+            RaySpellType raySpell = spellBook.EquippedRaySpell;
+            if (raySpell != null)
             {
-                EquippedSpell = spikeSpell;
+                EquippedSpell = raySpell;
+                equipSpellEvent.Raise(new GameEvent(RAY));                
             }
         }
 
@@ -60,10 +72,6 @@ namespace PlanchaCorp.LD50.Scripts.Player
                 spellCasted.GetComponent<AuraSpell>().Cast(auraSpell);
             }
         }
-
-        private float spikeCooldown = 0;
-        private float rayCooldown = 0;
-        private float splashCooldown = 0;
         public void CastSpell()
         {
             if (EquippedSpell == null) {
@@ -108,20 +116,25 @@ namespace PlanchaCorp.LD50.Scripts.Player
             }
         }
 
-        public void UpgradeAura() {
-            spellBook.UpgradeAura();
-        }
-        public void UpgradeSpike()
-        {
-            spellBook.UpgradeSpike();
-        }
-        public void UpgradeSplash()
-        {
-            spellBook.UpgradeSplash();
-        }
-        public void UpgradeRay()
-        {
-            spellBook.UpgradeRay();
+        public void onPreSpellUpgrade(GameEvent gameEvent){
+            if(skillPoint.Value>0){
+                var spell =(SpellNumbers) gameEvent.Get();
+                Debug.Log("upgrade"+ spell);
+                switch(spell){
+                    case AURA:
+                        spellBook.UpgradeAura();
+                        break;
+                    case SPIKE:
+                        spellBook.UpgradeSpike();
+                        break;
+                    case RAY:
+                        spellBook.UpgradeRay();
+                        break;
+                    case SPLASH :
+                        spellBook.UpgradeSplash();
+                        break;    
+                }
+            }
         }
     }
 }

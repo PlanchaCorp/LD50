@@ -14,11 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spells:
   - {fileID: 7941984446237351741, guid: f8c8dd849f73dd18e9ba94136b1386e3, type: 3}
-  availableSkillPoints: {fileID: 11400000, guid: ba6b805c4d0c9a9019b070dcb0fc5dfb, type: 2}
-  EquippedAuraSpell: {fileID: 11400000, guid: e2477893e80e9f5ec8972cf7efe3ea9b, type: 2}
-  EquippedSpikeSpell: {fileID: 0}
-  EquippedSplashSpell: {fileID: 11400000, guid: fd4661744cb2c9981b805733870b121e, type: 2}
-  EquippedRaySpell: {fileID: 0}
+  postUpgradeEvent: {fileID: 11400000, guid: e7d9bf6742774094a9e62d8af2e2e40e, type: 2}
   DefaultAuraSpellLevel: 1
   DefaultSpikeSpellLevel: 0
   DefaultSplashSpellLevel: 0

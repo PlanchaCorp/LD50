@@ -822,6 +822,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2056283081149897611, guid: de9873081b75b23c2b1307509f929d0a, type: 3}
+      propertyPath: m_Text
+      value: Aura
+      objectReference: {fileID: 0}
     - target: {fileID: 2099907979502630744, guid: de9873081b75b23c2b1307509f929d0a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -990,6 +994,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5292241698493128926, guid: de9873081b75b23c2b1307509f929d0a, type: 3}
+      propertyPath: m_Text
+      value: Ray
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088663842694447628, guid: de9873081b75b23c2b1307509f929d0a, type: 3}
+      propertyPath: m_Text
+      value: Splash
+      objectReference: {fileID: 0}
     - target: {fileID: 6962256628721203609, guid: de9873081b75b23c2b1307509f929d0a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1021,6 +1033,10 @@ PrefabInstance:
     - target: {fileID: 7272754792930825627, guid: de9873081b75b23c2b1307509f929d0a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8167041157754612713, guid: de9873081b75b23c2b1307509f929d0a, type: 3}
+      propertyPath: m_Text
+      value: Spike
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7194519562598025591, guid: de9873081b75b23c2b1307509f929d0a, type: 3}
