@@ -16,6 +16,8 @@ public class EndGame : MonoBehaviour
     private FloatVariable TotalXp;
     [SerializeField]
     private GameEventPublisher GameOverEvent;
+    [SerializeField]
+    private IntVariable GameOverCount;
 
     [SerializeField]
     private FloatVariable BackgroundFadeInTime;
@@ -56,7 +58,7 @@ public class EndGame : MonoBehaviour
     }
     public void DecrementAllyCount() {
         allyCount--;
-        if (allyCount <= 0 && Time.time > endOfImmunity && !isGameOver) {
+        if (allyCount <= GameOverCount.Value && Time.time > endOfImmunity && !isGameOver) {
             InitGameOver();
         }
     }

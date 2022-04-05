@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba53bc87dcd40e7c3b88f0738b2f0dd1, type: 3}
-  m_Name: worldSpawnSetting
+  m_Script: {fileID: 11500000, guid: 08e24930d35dbe235bd30b9c98c3ba9e, type: 3}
+  m_Name: GameOverCount
   m_EditorClassIdentifier: 
-  minRange: 18
-  maxRange: 16
-  spawnRate: {fileID: 11400000, guid: c364ba50371bc01a3a36c881fb5c84c7, type: 2}
-  spawnRateEvolution: -0.1
-  spawnRateMin: 2
+  Value: 0
+  ResetValueOnStart: 0
+  DefaultValue: 0

@@ -274,6 +274,7 @@ MonoBehaviour:
   CurrentLevel: {fileID: 11400000, guid: 784ac0cd2568fdec8aadea3adb3d0bab, type: 2}
   TotalXp: {fileID: 11400000, guid: f0249671782f08a7784ddbe432f739cc, type: 2}
   GameOverEvent: {fileID: 11400000, guid: b2daa76f5c26977c28eeaac4af4282a8, type: 2}
+  GameOverCount: {fileID: 11400000, guid: 82bffcfeec7d3ee92ba77d81a68b197b, type: 2}
   BackgroundFadeInTime: {fileID: 11400000, guid: 0e5d05891bdb2a62981a53f0d40056a5, type: 2}
   GameOverCanvasGroup: {fileID: 5383610406637077959}
   GameOverCanvas: {fileID: 2231639249731000926}
